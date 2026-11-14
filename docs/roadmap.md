@@ -8,9 +8,9 @@
 
 **Operational state:** Not applicable; no application exists
 
-**Current delivery workstream:** Slice 1 — Technical feasibility investigation
+**Current delivery workstream:** Slice 2 — Compatibility and Evidence Fixtures
 
-**Workstream lifecycle state:** In progress
+**Workstream lifecycle state:** Designed
 
 ## Mission
 
@@ -23,7 +23,9 @@ their interactive presentation, not canonical activity or geographic answers.
 - Agreed product-design baseline: [Explorer product specification v0.1](product-specification.md).
 - Slice 0, Repository and product foundation: **Accepted on 14 November 2026**.
 - Slice 0 is documentation-only and has no deployment state.
-- Slice 1, Technical feasibility investigation: **In progress**.
+- Slice 1, Technical feasibility investigation: **Accepted on 14 November 2026**.
+- Slice 2, Compatibility and Evidence Fixtures: **Designed; next bounded slice,
+  not started**.
 - Application delivery state: **Designed; no implementation**.
 - The intended Platform/Explorer responsibility boundary is documented in
   [Architecture](architecture.md).
@@ -34,32 +36,41 @@ their interactive presentation, not canonical activity or geographic answers.
 
 ## Target state
 
-The immediate target is completion of the bounded Slice 1 technical feasibility
-investigation. It will produce evidence and provisional recommendations without
-committing application implementation or preselecting a technology stack.
+The next bounded target is Slice 2, Compatibility and Evidence Fixtures. It will
+establish deterministic, non-sensitive evidence for tile conversion, boundary
+ownership, square and cluster semantics, and three-valued Ride Finder logic. It
+does not implement the Explorer application or select a technology stack.
 
 ## Delivery phases and milestones
 
 | Phase / milestone | Outcome | State | Acceptance evidence |
 | --- | --- | --- | --- |
 | 0. Repository and product foundation | Durable v0.1 specification, roadmap, architecture boundary and decision convention | Accepted (14 November 2026) | Owner reviewed the corrected Slice 0 report and authorised acceptance and the initial commit |
-| 1. Technical feasibility and architecture investigation | Evidence-backed answers and recommendations for the research questions below; no application implementation | In progress | Reviewed investigation report, representative feasibility evidence, identified contracts and recorded owner decisions; no unsupported implementation commitment |
-| 2. First implementation slice | Not yet defined or committed | Proposed | To be defined only after Phase 1 findings and owner direction |
+| 1. Technical feasibility and architecture investigation | Evidence-backed answers and recommendations in the [assessment](feasibility-assessment.md) and [proposed contracts](platform-data-contracts.md); no application implementation | Accepted (14 November 2026) | Owner accepted the assessment and proposed logical contracts as-is |
+| 2. Compatibility and evidence fixtures | Prove zoom-14 conversion, boundary ownership, square/cluster semantics and three-valued evidence using non-sensitive fixtures | Designed | Portable fixtures and deterministic tests accepted; intentional VeloViewer differences documented |
+| 3. Platform geographic foundation | Platform supplies stable activity identity, versioned qualification and minimum lifetime tile/provenance products | Designed | Platform-owned contracts accepted and representative end-to-end evidence available |
+| 4. Map rendering feasibility prototype | Compare shortlisted renderers against the same synthetic desktop/mobile workload without choosing an application framework | Designed | Recorded payload, parse, frame-time, interaction and memory results support an owner technology decision |
+| 5. Lifetime map vertical slice | Private map-first lifetime tiles, classification, square outline and tile inspection using trusted Platform products | Designed | Independent viewport/inspection tests and privacy-boundary evidence; no duplicated canonical calculation |
+| 6. Historical exploration | Activity/date/milestone navigation, playback and aligned charts over Platform historical checkpoints | Designed | Historical fixture replay, random-seek and backfill-invalidation evidence |
+| 7. Coverage and countries | Coverage-first heatmap plus country/region discovery and allocation presentation | Designed | Qualified-gap, distinct-activity, boundary-version and uncertainty fixtures |
+| 8. Ride Finder | Spatial searches with starts/ends/traverses and true/false/unknown negation | Designed | Predicate truth-table, sample/segment distinction, complete-route and privacy tests |
 
 ## Active work
 
-**Current bounded item:** Complete the bounded Slice 1 technical feasibility
-investigation.
+**Current bounded item:** Slice 2 — Compatibility and Evidence Fixtures; designed
+as the next bounded development slice and not started.
 
-**Position:** Slice 0 is accepted. Slice 1 investigation is authorised and in
-progress. No application implementation, feasibility conclusion or technology
-selection exists yet.
+**Position:** Slices 0 and 1 are accepted. Slice 2 is next. Canonical Platform
+identity, qualification and geographic-product dependencies remain outstanding;
+they block later canonical product slices but do not block Slice 2's synthetic,
+non-sensitive fixture work. No application implementation or technology
+selection has been authorised.
 
-**Evidence needed for acceptance:** A reviewed Slice 1 assessment that answers or
-explicitly bounds each research area; cites representative compatibility,
-data-quality, rendering and privacy evidence; identifies required Platform data
-products; separates findings from recommendations; and records unresolved owner
-decisions.
+**Evidence needed for acceptance:** Portable deterministic tests and documented
+fixtures cover zoom-14 conversion, numeric boundary ownership, maximum-square
+cases, explicitly qualified cluster assumptions, and true/false/unknown
+predicate semantics. Intentional differences from VeloViewer are traceable and
+no private GPS evidence is included.
 
 ## Research questions
 
@@ -123,8 +134,10 @@ These are questions, not implementation commitments.
 - **Privacy exposure:** Detailed routes can reveal sensitive locations. Define
   authenticated access and public redaction requirements before implementation.
 
-No current blocker prevents the investigation from being scoped. Access to
-private evidence or production systems is not authorised by this roadmap.
+No blocker prevented the bounded read-only investigation. Canonical application
+delivery is blocked on the Platform identity, qualification and geographic
+product decisions described above. Access to private evidence or production
+systems is not authorised by this roadmap.
 
 ## Deferred work
 
@@ -135,12 +148,46 @@ private evidence or production systems is not authorised by this roadmap.
   the canonical VeloViewer target is understood.
 - Within-tile route coverage, combined `AND` predicates and deep links are agreed
   deferred capabilities, not commitments for Slice 0 or Phase 1.
+- All proposed implementation slices remain Designed and unauthorised until the
+  owner explicitly commissions the relevant bounded slice.
+
+## Proposed implementation sequence and dependency boundaries
+
+1. **Compatibility and evidence fixtures — Explorer independent.** Implement no
+   application UI. Establish tile conversion/boundary fixtures, synthetic square
+   and cluster sets, and three-valued predicate truth tables. Owner-authorised
+   VeloViewer observations are a cross-project/external dependency.
+2. **Platform geographic foundation — blocked by Platform.** Stable canonical
+   activity identity, approved observation/segment qualification, reference-data
+   governance, lifetime tiles and provenance are prerequisites for canonical
+   end-to-end results.
+3. **Renderer prototype — Explorer independent after volume assumptions.** Use
+   synthetic data to compare MapLibre GL JS and Leaflet, adding OpenLayers only
+   if geometry/editing needs justify it. This prototype informs but does not make
+   the technology choice.
+4. **Lifetime map vertical slice — cross-project.** Consume trusted Platform
+   lifetime tiles and tile-history products through an authenticated/private
+   boundary. This is the first candidate product implementation, subject to
+   separate authorisation.
+5. **Historical exploration — blocked by Platform checkpoints.** Add navigation
+   and playback only after versioned historical classification products exist.
+6. **Coverage and countries — blocked by qualification and reference decisions.**
+   Add heatmap and country presentation after aggregation and boundary contracts
+   are accepted.
+7. **Ride Finder — blocked by spatial evidence service.** Add last because it
+   needs bounded geometry queries, explicit unknown semantics, segment validity
+   and on-demand private route retrieval.
+
+The [feasibility assessment](feasibility-assessment.md) contains the concise
+Cycling Portfolio summary and separately lists actions for the Cycling Platform
+— Geospatial conversation. No sibling repository change is implied.
 
 ## Next action
 
-**Complete the bounded Slice 1 feasibility investigation and submit its
-assessment, proposed Platform data contracts and implementation sequence for
-owner review; this does not authorise application implementation.**
+**Commission and complete the bounded Slice 2 Compatibility and Evidence
+Fixtures work when explicitly authorised; outstanding Platform dependencies do
+not block this fixture-only slice and no later application slice is authorised by
+this roadmap.**
 
 ## Revision history
 
@@ -149,3 +196,5 @@ owner review; this does not authorise application implementation.**
 | 2026-11-14 | Initial roadmap | Slice 0 transfer of the agreed Explorer v0.1 design into its owning repository |
 | 2026-11-14 | Corrected acceptance candidate | Restored agreed v0.1 requirements identified by independent review and made owner acceptance the immediate next action |
 | 2026-11-14 | Slice 0 accepted; Slice 1 started | Owner accepted the corrected Slice 0 report, authorised the initial commit and commenced the bounded feasibility investigation |
+| 2026-11-14 | Slice 1 submitted for acceptance | Added feasibility assessment, proposed logical contracts and a dependency-aware implementation sequence; no implementation or technology selection |
+| 2026-11-14 | Slice 1 accepted; Slice 2 next | Owner accepted the feasibility assessment and proposed contracts as-is; fixture work is next while Platform dependencies remain outstanding |
