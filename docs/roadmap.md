@@ -4,13 +4,13 @@
 > minutes. The [product specification](product-specification.md) owns accepted
 > product behaviour; this roadmap owns delivery position and next action.
 
-**Last reviewed:** 2026-11-14
+**Last reviewed:** 2026-11-17
 
 **Operational state:** Not applicable; no application exists
 
 **Current delivery workstream:** Slice 2 — Compatibility and Evidence Fixtures
 
-**Workstream lifecycle state:** Designed
+**Workstream lifecycle state:** Awaiting acceptance
 
 ## Mission
 
@@ -24,8 +24,7 @@ their interactive presentation, not canonical activity or geographic answers.
 - Slice 0, Repository and product foundation: **Accepted on 14 November 2026**.
 - Slice 0 is documentation-only and has no deployment state.
 - Slice 1, Technical feasibility investigation: **Accepted on 14 November 2026**.
-- Slice 2, Compatibility and Evidence Fixtures: **Designed; next bounded slice,
-  not started**.
+- Slice 2, Compatibility and Evidence Fixtures: **Awaiting acceptance; implemented and verified on 17 November 2026**.
 - Application delivery state: **Designed; no implementation**.
 - The intended Platform/Explorer responsibility boundary is documented in
   [Architecture](architecture.md).
@@ -47,7 +46,7 @@ does not implement the Explorer application or select a technology stack.
 | --- | --- | --- | --- |
 | 0. Repository and product foundation | Durable v0.1 specification, roadmap, architecture boundary and decision convention | Accepted (14 November 2026) | Owner reviewed the corrected Slice 0 report and authorised acceptance and the initial commit |
 | 1. Technical feasibility and architecture investigation | Evidence-backed answers and recommendations in the [assessment](feasibility-assessment.md) and [proposed contracts](platform-data-contracts.md); no application implementation | Accepted (14 November 2026) | Owner accepted the assessment and proposed logical contracts as-is |
-| 2. Compatibility and evidence fixtures | Prove zoom-14 conversion, boundary ownership, square/cluster semantics and three-valued evidence using non-sensitive fixtures | Designed | Portable fixtures and deterministic tests accepted; intentional VeloViewer differences documented |
+| 2. Compatibility and evidence fixtures | Establish zoom-14/square expectations and three-valued evidence; expose unresolved cluster and boundary compatibility using synthetic fixtures | Awaiting acceptance | 96 synthetic cases and offline audit/mutation tests; owner acceptance pending; intentional VeloViewer differences documented |
 | 3. Platform geographic foundation | Platform supplies stable activity identity, versioned qualification and minimum lifetime tile/provenance products | Designed | Platform-owned contracts accepted and representative end-to-end evidence available |
 | 4. Map rendering feasibility prototype | Compare shortlisted renderers against the same synthetic desktop/mobile workload without choosing an application framework | Designed | Recorded payload, parse, frame-time, interaction and memory results support an owner technology decision |
 | 5. Lifetime map vertical slice | Private map-first lifetime tiles, classification, square outline and tile inspection using trusted Platform products | Designed | Independent viewport/inspection tests and privacy-boundary evidence; no duplicated canonical calculation |
@@ -57,10 +56,12 @@ does not implement the Explorer application or select a technology stack.
 
 ## Active work
 
-**Current bounded item:** Slice 2 — Compatibility and Evidence Fixtures; designed
-as the next bounded development slice and not started.
+**Current bounded item:** Slice 2 — Compatibility and Evidence Fixtures; Awaiting
+acceptance. [Fixtures and validation](../fixtures/README.md), [compatibility register](compatibility-register.md)
+and [completion report](slice-2-report.md) are available for owner review.
 
-**Position:** Slices 0 and 1 are accepted. Slice 2 is next. Canonical Platform
+**Position:** Slices 0 and 1 are accepted. Slice 2 implementation and automated
+verification are complete; owner review and acceptance remain pending. Canonical Platform
 identity, qualification and geographic-product dependencies remain outstanding;
 they block later canonical product slices but do not block Slice 2's synthetic,
 non-sensitive fixture work. No application implementation or technology
@@ -110,6 +111,10 @@ These are questions, not implementation commitments.
 - **Representative private activity evidence:** Owner-controlled dependency.
   Required condition: any later use is explicitly authorised, minimised and kept
   out of repository documentation.
+- **Cycling Analytics — detailed dark Best Efforts cartography:** Improvements
+  are deferred until Explorer informs the wider map provider strategy. Carry this
+  dependency into Slice 4 map-rendering feasibility; Slice 2 neither investigates
+  providers nor selects a shared strategy or changes Analytics.
 - **Owner decisions:** Required for accepting investigation recommendations and
   commissioning any implementation slice.
 
@@ -148,8 +153,9 @@ systems is not authorised by this roadmap.
   the canonical VeloViewer target is understood.
 - Within-tile route coverage, combined `AND` predicates and deep links are agreed
   deferred capabilities, not commitments for Slice 0 or Phase 1.
-- All proposed implementation slices remain Designed and unauthorised until the
-  owner explicitly commissions the relevant bounded slice.
+- Subsequent slices remain Designed and unauthorised until the owner explicitly
+  commissions the relevant bounded slice. Slice 2 alone was commissioned on
+  17 November 2026; acceptance remains pending.
 
 ## Proposed implementation sequence and dependency boundaries
 
@@ -184,10 +190,10 @@ Cycling Portfolio summary and separately lists actions for the Cycling Platform
 
 ## Next action
 
-**Commission and complete the bounded Slice 2 Compatibility and Evidence
-Fixtures work when explicitly authorised; outstanding Platform dependencies do
-not block this fixture-only slice and no later application slice is authorised by
-this roadmap.**
+**Owner review and acceptance of Slice 2.** Implementation and automated
+verification are complete. Leave the work uncommitted for review; do not commence
+Slice 3, renderer investigation or any subsequent slice. Review the provisional
+numeric conventions and unresolved cluster/completeness policies in the report.
 
 ## Revision history
 
@@ -198,3 +204,4 @@ this roadmap.**
 | 2026-11-14 | Slice 0 accepted; Slice 1 started | Owner accepted the corrected Slice 0 report, authorised the initial commit and commenced the bounded feasibility investigation |
 | 2026-11-14 | Slice 1 submitted for acceptance | Added feasibility assessment, proposed logical contracts and a dependency-aware implementation sequence; no implementation or technology selection |
 | 2026-11-14 | Slice 1 accepted; Slice 2 next | Owner accepted the feasibility assessment and proposed contracts as-is; fixture work is next while Platform dependencies remain outstanding |
+| 2026-11-17 | Slice 2 In progress → Awaiting acceptance | Owner-authorised synthetic fixtures and automated audit completed; cluster and predicate policy uncertainty retained; Analytics map-strategy dependency recorded |

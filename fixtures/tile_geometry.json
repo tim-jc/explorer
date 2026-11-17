@@ -1,0 +1,728 @@
+{
+  "format_version": 1,
+  "family": "tile_geometry",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "origin",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          0
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "northwest",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -90,
+          66.51326044311186
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          4096,
+          4096
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "negative-longitude",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -0.001,
+          0.001
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8191,
+          8191
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "southwest",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -0.001,
+          -0.001
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8191,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "northeast",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.001,
+          0.001
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8191
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "southeast",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.001,
+          -0.001
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "west-seam",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -180,
+          0
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          0,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "east-seam",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          180,
+          0
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          0,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "near-east-seam",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          179.999999,
+          0
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          16383,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "near-west-seam",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -179.999999,
+          0
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          0,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "north-limit",
+      "description": "Coordinate ownership under fixture numeric convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          85.0511287798066
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          0
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "south-limit",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          -85.0511287798066
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "excluded_south_edge"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "polar",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          90
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "outside_mercator"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "too-far-east",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          181,
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "longitude_range"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "too-far-west",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -181,
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "longitude_range"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "missing",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          null,
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "missing"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "text",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          "NaN",
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "non_numeric"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "latitude-range",
+      "description": "Deliberately unsupported input",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          -91
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "latitude_range"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "tile-reference",
+      "description": "Projected centre, bounds and four neighbours",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "expected": {
+        "bounds_wsen": [
+          0,
+          -0.021972655711418845,
+          0.02197265625,
+          0
+        ],
+        "centre": [
+          0.010986328125,
+          -0.010986328057677354
+        ],
+        "neighbours": {
+          "west": [
+            14,
+            8191,
+            8192
+          ],
+          "east": [
+            14,
+            8193,
+            8192
+          ],
+          "north": [
+            14,
+            8192,
+            8191
+          ],
+          "south": [
+            14,
+            8192,
+            8193
+          ]
+        }
+      },
+      "unresolved": []
+    },
+    {
+      "id": "west-inside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          1e-07,
+          -0.01
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "west-outside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          -1e-07,
+          -0.01
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8191,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "east-inside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.02197255625,
+          -0.01
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "east-outside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.02197275625,
+          -0.01
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8193,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "north-inside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.01,
+          -1e-07
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "north-outside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.01,
+          1e-07
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8191
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "south-inside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.01,
+          -0.021972555711418845
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "south-outside",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.01,
+          -0.021972755711418844
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8193
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "east-edge",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.02197265625,
+          -0.01
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8193,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "south-edge",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.01,
+          -0.021972655711418845
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8193
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "southeast-corner",
+      "description": "Inside/outside or exact edge of tile 14/8192/8192",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.02197265625,
+          -0.021972655711418845
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8193,
+          8193
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "invalid-index",
+      "description": "Deliberately invalid tile reference",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "tile": [
+          14,
+          -1,
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "unsupported_tile"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "unsupported-zoom",
+      "description": "Deliberately invalid tile reference",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "tile": [
+          13,
+          0,
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "unsupported_tile"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "index-overflow",
+      "description": "Deliberately invalid tile reference",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "tile": [
+          14,
+          16384,
+          0
+        ],
+        "deliberate_invalid": true
+      },
+      "expected": {
+        "error": "unsupported_tile"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "west-edge",
+      "description": "Exact edge or corner under fixture half-open convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          -0.01
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "northeast-corner",
+      "description": "Exact edge or corner under fixture half-open convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0.02197265625,
+          0
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8193,
+          8192
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "id": "southwest-corner",
+      "description": "Exact edge or corner under fixture half-open convention",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "coordinate": [
+          0,
+          -0.021972655711418845
+        ]
+      },
+      "expected": {
+        "tile": [
+          14,
+          8192,
+          8193
+        ]
+      },
+      "unresolved": []
+    }
+  ]
+}

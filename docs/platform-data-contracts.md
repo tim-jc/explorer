@@ -332,3 +332,11 @@ licence review; disputed-boundary and boundary-point policies.
 
 Only after those decisions should a physical schema, API style, database,
 serialization or hosting design be proposed.
+
+## Synthetic contract evidence
+
+[Slice 2 fixtures](../fixtures/README.md) provide portable synthetic inputs and
+authored expected results for future contract tests. They do not implement or
+accept a physical interface. Platform adapters should explicitly agree provisional
+conventions, preserve partial/unknown results and compare independently computed
+results; Explorer tests may inject expected snapshots solely for presentation.

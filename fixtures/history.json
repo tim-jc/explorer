@@ -1,0 +1,649 @@
+{
+  "format_version": 1,
+  "family": "history",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "ordered-growth",
+      "description": "Initial, unchanged, isolated, 2x2 then 3x3 coverage at each activity boundary",
+      "basis": "accepted_policy",
+      "status": "partial",
+      "input": {
+        "anchor_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "policy_version": "syn-q1",
+        "activities": [
+          {
+            "activity_id": "syn-h1",
+            "timestamp": "2000-01-01T12:00:00Z",
+            "accepted_tile_offsets": [
+              [
+                0,
+                0
+              ]
+            ],
+            "visit_evidence": [
+              {
+                "activity_id": "syn-h1",
+                "sample_index": 0,
+                "timestamp": "2000-01-01T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "activity_id": "syn-h2",
+            "timestamp": "2000-01-02T12:00:00Z",
+            "accepted_tile_offsets": [
+              [
+                0,
+                0
+              ]
+            ],
+            "visit_evidence": [
+              {
+                "activity_id": "syn-h2",
+                "sample_index": 0,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "activity_id": "syn-h3",
+            "timestamp": "2000-01-03T12:00:00Z",
+            "accepted_tile_offsets": [
+              [
+                4,
+                4
+              ]
+            ],
+            "visit_evidence": [
+              {
+                "activity_id": "syn-h3",
+                "sample_index": 0,
+                "timestamp": "2000-01-03T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  4,
+                  4
+                ]
+              }
+            ]
+          },
+          {
+            "activity_id": "syn-h4",
+            "timestamp": "2000-01-04T12:00:00Z",
+            "accepted_tile_offsets": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "visit_evidence": [
+              {
+                "activity_id": "syn-h4",
+                "sample_index": 0,
+                "timestamp": "2000-01-04T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "activity_id": "syn-h4",
+                "sample_index": 1,
+                "timestamp": "2000-01-04T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "activity_id": "syn-h4",
+                "sample_index": 2,
+                "timestamp": "2000-01-04T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "activity_id": "syn-h5",
+            "timestamp": "2000-01-05T12:00:00Z",
+            "accepted_tile_offsets": [
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "visit_evidence": [
+              {
+                "activity_id": "syn-h5",
+                "sample_index": 0,
+                "timestamp": "2000-01-05T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "activity_id": "syn-h5",
+                "sample_index": 1,
+                "timestamp": "2000-01-05T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "activity_id": "syn-h5",
+                "sample_index": 2,
+                "timestamp": "2000-01-05T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "activity_id": "syn-h5",
+                "sample_index": 3,
+                "timestamp": "2000-01-05T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "activity_id": "syn-h5",
+                "sample_index": 4,
+                "timestamp": "2000-01-05T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  2,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "checkpoints": [
+          {
+            "after": "syn-h1",
+            "visited_offsets": [
+              [
+                0,
+                0
+              ]
+            ],
+            "visited_count": 1,
+            "max_square_side": 1,
+            "new_square_milestone": 1,
+            "largest_cluster_size": null
+          },
+          {
+            "after": "syn-h2",
+            "visited_offsets": [
+              [
+                0,
+                0
+              ]
+            ],
+            "visited_count": 1,
+            "max_square_side": 1,
+            "new_square_milestone": null,
+            "largest_cluster_size": null
+          },
+          {
+            "after": "syn-h3",
+            "visited_offsets": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "visited_count": 2,
+            "max_square_side": 1,
+            "new_square_milestone": null,
+            "largest_cluster_size": null
+          },
+          {
+            "after": "syn-h4",
+            "visited_offsets": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "visited_count": 5,
+            "max_square_side": 2,
+            "new_square_milestone": 2,
+            "largest_cluster_size": null
+          },
+          {
+            "after": "syn-h5",
+            "visited_offsets": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "visited_count": 10,
+            "max_square_side": 3,
+            "new_square_milestone": 3,
+            "largest_cluster_size": null
+          }
+        ],
+        "first_visit_origin": "syn-h1",
+        "subsequent_visit_origin": [
+          "syn-h2"
+        ],
+        "attained_milestones": [
+          1,
+          2,
+          3
+        ]
+      },
+      "unresolved": [
+        "Historical largest cluster and membership unresolved at every checkpoint."
+      ]
+    },
+    {
+      "id": "backfill",
+      "description": "Earlier inserted activity changes first visit, not final visited set",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "base_case": "history/ordered-growth",
+        "insert": {
+          "activity_id": "syn-h0",
+          "timestamp": "1999-12-31T12:00:00Z",
+          "accepted_tile_offsets": [
+            [
+              0,
+              0
+            ]
+          ],
+          "visit_evidence": [
+            {
+              "activity_id": "syn-h0",
+              "sample_index": 0,
+              "timestamp": "1999-12-31T12:00:00Z",
+              "qualification": "accepted",
+              "resolution": "full",
+              "policy_version": "syn-q1",
+              "tile_offset": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "expected": {
+        "first_visit_origin": "syn-h0",
+        "last_visit_origin": "syn-h2",
+        "origin_activity_count": 3,
+        "final_visited_count": 10,
+        "rebuild_from": "syn-h0"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "invalidation",
+      "description": "Policy q2 rejects the sole samples establishing the 3x3 extension",
+      "basis": "accepted_policy",
+      "status": "partial",
+      "input": {
+        "base_case": "history/ordered-growth",
+        "new_policy_version": "syn-q2",
+        "reject_activity": "syn-h5"
+      },
+      "expected": {
+        "final_visited_offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "final_visited_count": 5,
+        "max_square_side": 2,
+        "attained_milestones": [
+          1,
+          2
+        ],
+        "rebuild_from": "syn-h5",
+        "largest_cluster_size": null
+      },
+      "unresolved": [
+        "Cluster outcome unresolved; retain q1 snapshot separately."
+      ]
+    },
+    {
+      "id": "skipped-square-size",
+      "description": "One activity completes a 3x3 from one tile; do not fabricate a 2x2 milestone",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "anchor_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "activities": [
+          {
+            "activity_id": "syn-j1",
+            "accepted_tile_offsets": [
+              [
+                0,
+                0
+              ]
+            ],
+            "timestamp": "2000-01-01T12:00:00Z",
+            "visit_evidence": [
+              {
+                "activity_id": "syn-j1",
+                "sample_index": 0,
+                "timestamp": "2000-01-01T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "activity_id": "syn-j2",
+            "accepted_tile_offsets": [
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "timestamp": "2000-01-02T12:00:00Z",
+            "visit_evidence": [
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 0,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 1,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 2,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 3,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 4,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 5,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 6,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "activity_id": "syn-j2",
+                "sample_index": 7,
+                "timestamp": "2000-01-02T12:00:00Z",
+                "qualification": "accepted",
+                "resolution": "full",
+                "policy_version": "syn-q1",
+                "tile_offset": [
+                  2,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "square_sides_at_boundaries": [
+          1,
+          3
+        ],
+        "attained_milestones": [
+          1,
+          3
+        ]
+      },
+      "unresolved": []
+    }
+  ]
+}

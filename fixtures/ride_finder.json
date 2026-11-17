@@ -1,0 +1,987 @@
+{
+  "format_version": 1,
+  "family": "ride_finder",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "starts-true",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "starts",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              1,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": "starts"
+      },
+      "expected": {
+        "result": "true",
+        "negated_result": "false",
+        "sample_presence": "true",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": [
+        "Conditional expected result: exact supplied endpoint for starts/ends, segment intersection for traverses. These predicate policies and completeness contract require Platform agreement."
+      ]
+    },
+    {
+      "id": "starts-false",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "starts",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": "starts"
+      },
+      "expected": {
+        "result": "false",
+        "negated_result": "true",
+        "sample_presence": "false",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": [
+        "Conditional expected result: exact supplied endpoint for starts/ends, segment intersection for traverses. These predicate policies and completeness contract require Platform agreement."
+      ]
+    },
+    {
+      "id": "starts-unknown",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "predicate": "starts",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "uncertain",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "incomplete",
+        "endpoint_role": "starts"
+      },
+      "expected": {
+        "result": "unknown",
+        "negated_result": "unknown",
+        "sample_presence": "unknown",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "ends-true",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "ends",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              1,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": "ends"
+      },
+      "expected": {
+        "result": "true",
+        "negated_result": "false",
+        "sample_presence": "true",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": [
+        "Conditional expected result: exact supplied endpoint for starts/ends, segment intersection for traverses. These predicate policies and completeness contract require Platform agreement."
+      ]
+    },
+    {
+      "id": "ends-false",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "ends",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": "ends"
+      },
+      "expected": {
+        "result": "false",
+        "negated_result": "true",
+        "sample_presence": "false",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": [
+        "Conditional expected result: exact supplied endpoint for starts/ends, segment intersection for traverses. These predicate policies and completeness contract require Platform agreement."
+      ]
+    },
+    {
+      "id": "ends-unknown",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "predicate": "ends",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "uncertain",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "incomplete",
+        "endpoint_role": "ends"
+      },
+      "expected": {
+        "result": "unknown",
+        "negated_result": "unknown",
+        "sample_presence": "unknown",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "traverses-true",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "traverses",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              -1,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              3,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "true",
+        "negated_result": "false",
+        "sample_presence": "false",
+        "segment_intersection": "true"
+      },
+      "unresolved": [
+        "Conditional expected result: exact supplied endpoint for starts/ends, segment intersection for traverses. These predicate policies and completeness contract require Platform agreement."
+      ]
+    },
+    {
+      "id": "traverses-false",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "traverses",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              4,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "false",
+        "negated_result": "true",
+        "sample_presence": "false",
+        "segment_intersection": "false"
+      },
+      "unresolved": [
+        "Conditional expected result: exact supplied endpoint for starts/ends, segment intersection for traverses. These predicate policies and completeness contract require Platform agreement."
+      ]
+    },
+    {
+      "id": "traverses-unknown",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "predicate": "traverses",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              4,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "uncertain",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "incomplete",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "unknown",
+        "negated_result": "unknown",
+        "sample_presence": "unknown",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sample_presence-true",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "sample_presence",
+        "area": {
+          "type": "tile",
+          "tile": [
+            14,
+            8192,
+            8192
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "true",
+        "negated_result": "false",
+        "sample_presence": "true",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sample_presence-false",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "sample_presence",
+        "area": {
+          "type": "tile",
+          "tile": [
+            14,
+            8192,
+            8192
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "false",
+        "negated_result": "true",
+        "sample_presence": "false",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "sample_presence-unknown",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "sample_presence",
+        "area": {
+          "type": "tile",
+          "tile": [
+            14,
+            8192,
+            8192
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "uncertain",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "incomplete",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "unknown",
+        "negated_result": "unknown",
+        "sample_presence": "unknown",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "segment_intersection-true",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "segment_intersection",
+        "area": {
+          "type": "polygon",
+          "ring": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              -1,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              3,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "true",
+        "negated_result": "false",
+        "sample_presence": "false",
+        "segment_intersection": "true"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "segment_intersection-false",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "segment_intersection",
+        "area": {
+          "type": "polygon",
+          "ring": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              4,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "complete_for_predicate",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "false",
+        "negated_result": "true",
+        "sample_presence": "false",
+        "segment_intersection": "false"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "segment_intersection-unknown",
+      "description": "Predicate and its negation retain unknown; false assumes supplied complete evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "segment_intersection",
+        "area": {
+          "type": "polygon",
+          "ring": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              3,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              4,
+              3
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "uncertain",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "incomplete",
+        "endpoint_role": null
+      },
+      "expected": {
+        "result": "unknown",
+        "negated_result": "unknown",
+        "sample_presence": "unknown",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "radius-presence",
+      "description": "Point at centre is inside any positive radius regardless of distance model",
+      "basis": "mathematical",
+      "status": "resolved",
+      "input": {
+        "predicate": "sample_presence",
+        "area": {
+          "type": "point_radius",
+          "centre": [
+            1,
+            1
+          ],
+          "radius_units": 0.5,
+          "model": "toy_planar_degrees"
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              1,
+              1
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "complete_for_predicate"
+      },
+      "expected": {
+        "result": "true",
+        "negated_result": "false"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "endpoint-window",
+      "description": "Accepted point near activity start does not settle starts semantics",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "starts",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              1,
+              1
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [],
+        "evidence_completeness": "unresolved"
+      },
+      "expected": {
+        "result": null,
+        "negated_result": null
+      },
+      "unresolved": [
+        "Define exact start/end window and endpoint completeness; examples above are conditional on supplied complete endpoint evidence."
+      ]
+    },
+    {
+      "id": "traverses-combination",
+      "description": "Distinct facts do not select a canonical traverses combination policy",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "predicate": "traverses",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              -1,
+              1
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              3,
+              1
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "evidence_completeness": "unresolved"
+      },
+      "expected": {
+        "sample_presence": "false",
+        "segment_intersection": "true",
+        "result": null,
+        "negated_result": null
+      },
+      "unresolved": [
+        "Resolve sample-versus-segment composition for traverses; conditional examples use segment intersection."
+      ]
+    },
+    {
+      "id": "no-gps",
+      "description": "Absence of evidence is unknown, including after negation",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "predicate": "traverses",
+        "area": {
+          "type": "rectangle",
+          "bounds": [
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        "samples": [],
+        "segments": [],
+        "evidence_completeness": "incomplete"
+      },
+      "expected": {
+        "result": "unknown",
+        "negated_result": "unknown",
+        "sample_presence": "unknown",
+        "segment_intersection": "unknown"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "negation-table",
+      "description": "Explicit complete three-valued NOT table",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "truth_values": [
+          "true",
+          "false",
+          "unknown"
+        ]
+      },
+      "expected": {
+        "negation": {
+          "true": "false",
+          "false": "true",
+          "unknown": "unknown"
+        }
+      },
+      "unresolved": []
+    }
+  ]
+}

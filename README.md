@@ -10,8 +10,8 @@ The agreed v0.1 product-design baseline is documented in the
 [Explorer product specification v0.1](docs/product-specification.md). The owner
 accepted the Slice 0 repository and product foundation on 14 November 2026.
 The owner accepted Slice 1, the technical feasibility investigation, on 14
-November 2026. Slice 2, Compatibility and Evidence Fixtures, is the next bounded
-development slice. Explorer remains designed, with no application implementation.
+November 2026. Slice 2, Compatibility and Evidence Fixtures, is implemented and
+**Awaiting acceptance**. Explorer remains designed, with no application implementation.
 
 ## Repository documents
 
@@ -25,12 +25,19 @@ development slice. Explorer remains designed, with no application implementation
   options, risks and provisional technical direction.
 - [Proposed Platform data contracts](docs/platform-data-contracts.md) — logical
   future products and ownership boundaries, not implemented interfaces.
+- [Synthetic fixtures and validation](fixtures/README.md) — 96 inspectable cases
+  across seven families; offline audit instructions and limitations.
+- [Compatibility register](docs/compatibility-register.md) — documented, mathematical,
+  unverified and intentional differences.
+- [Slice 2 completion report](docs/slice-2-report.md) — baseline, verification and
+  owner review notes.
 - [Decision records](decisions/README.md) — convention for future durable
   technical decisions.
 
 ## Status and scope
 
-This repository currently contains documentation only. It contains no
-application code, selected technology stack, deployment design or claim of
-implemented functionality. Detailed GPS tracks are private by default. See the
+This repository contains design documentation, synthetic fixtures and lightweight
+offline validation tooling. It contains no application code, selected technology
+stack, deployment design or implemented production geographic products.
+Detailed GPS tracks are private by default. See the
 [roadmap](docs/roadmap.md) for the current investigation and delivery state.

@@ -1,0 +1,416 @@
+{
+  "format_version": 1,
+  "family": "tile_evidence",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "single",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": true,
+        "activity_ids": [
+          "syn-a"
+        ],
+        "distinct_activity_count": 1,
+        "evidence_state": "positive"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "repeated",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              0.011,
+              -0.011
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": true,
+        "activity_ids": [
+          "syn-a"
+        ],
+        "distinct_activity_count": 1,
+        "evidence_state": "positive"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "two-activities",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-b",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": true,
+        "activity_ids": [
+          "syn-a",
+          "syn-b"
+        ],
+        "distinct_activity_count": 2,
+        "evidence_state": "positive"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "rejected",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "rejected",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": false,
+        "activity_ids": [],
+        "distinct_activity_count": 0,
+        "evidence_state": "insufficient"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "uncertain",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "uncertain",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": false,
+        "activity_ids": [],
+        "distinct_activity_count": 0,
+        "evidence_state": "insufficient"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "missing",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": null,
+            "qualification": "rejected",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": false,
+        "activity_ids": [],
+        "distinct_activity_count": 0,
+        "evidence_state": "insufficient"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "mixed",
+      "description": "Only accepted full-resolution samples supply positive tile evidence",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "rejected",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 2,
+            "timestamp": "2000-01-02T00:00:02Z",
+            "coordinate": [
+              0.01,
+              -0.01
+            ],
+            "qualification": "uncertain",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": []
+      },
+      "expected": {
+        "positive_visit_evidence": true,
+        "activity_ids": [
+          "syn-a"
+        ],
+        "distinct_activity_count": 1,
+        "evidence_state": "positive"
+      },
+      "unresolved": []
+    },
+    {
+      "id": "segment-only",
+      "description": "Accepted segment intersects target but neither endpoint is inside",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              -0.01,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              0.03,
+              -0.01
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ]
+      },
+      "expected": {
+        "positive_visit_evidence": false,
+        "activity_ids": [],
+        "distinct_activity_count": 0,
+        "evidence_state": "insufficient",
+        "segment_intersection": true
+      },
+      "unresolved": []
+    },
+    {
+      "id": "corner-only",
+      "description": "Accepted segment intersects target but neither endpoint is inside",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "target_tile": [
+          14,
+          8192,
+          8192
+        ],
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              -0.001,
+              -0.002
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              0.002,
+              0.001
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ]
+      },
+      "expected": {
+        "positive_visit_evidence": false,
+        "activity_ids": [],
+        "distinct_activity_count": 0,
+        "evidence_state": "insufficient",
+        "segment_intersection": true
+      },
+      "unresolved": []
+    }
+  ]
+}

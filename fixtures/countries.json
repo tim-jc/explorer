@@ -1,0 +1,711 @@
+{
+  "format_version": 1,
+  "family": "countries",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "accepted",
+      "description": "Sample-based synthetic country presence, no distance threshold",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ]
+      },
+      "expected": {
+        "visited": [
+          "syn-west"
+        ],
+        "first_visit": {
+          "syn-west": {
+            "activity_id": "syn-a",
+            "sample_index": 0
+          }
+        },
+        "distinct_activity_count": 1
+      },
+      "unresolved": []
+    },
+    {
+      "id": "rejected",
+      "description": "Sample-based synthetic country presence, no distance threshold",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "rejected",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ]
+      },
+      "expected": {
+        "visited": [],
+        "first_visit": {},
+        "distinct_activity_count": 0
+      },
+      "unresolved": []
+    },
+    {
+      "id": "uncertain",
+      "description": "Sample-based synthetic country presence, no distance threshold",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "uncertain",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ]
+      },
+      "expected": {
+        "visited": [],
+        "first_visit": {},
+        "distinct_activity_count": 0
+      },
+      "unresolved": []
+    },
+    {
+      "id": "repeated",
+      "description": "Sample-based synthetic country presence, no distance threshold",
+      "basis": "accepted_policy",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-b",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ]
+      },
+      "expected": {
+        "visited": [
+          "syn-west"
+        ],
+        "first_visit": {
+          "syn-west": {
+            "activity_id": "syn-a",
+            "sample_index": 0
+          }
+        },
+        "distinct_activity_count": 2
+      },
+      "unresolved": []
+    },
+    {
+      "id": "cross-border",
+      "description": "Planar toy allocation fractions of a supplied 12-unit segment; not geodesic distances",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              1.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "toy_length_units": 12
+      },
+      "expected": {
+        "visited": [
+          "syn-west",
+          "syn-east"
+        ],
+        "allocated_units": {
+          "syn-west": 6.0,
+          "syn-east": 6.0
+        },
+        "unallocated_units": 0,
+        "uncertain_units": 0
+      },
+      "unresolved": []
+    },
+    {
+      "id": "through-no-sample",
+      "description": "Planar toy allocation fractions of a supplied 12-unit segment; not geodesic distances",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              -0.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              2.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "accepted",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "toy_length_units": 12
+      },
+      "expected": {
+        "visited": [],
+        "allocated_units": {
+          "syn-west": 4.0,
+          "syn-east": 4.0
+        },
+        "unallocated_units": 4,
+        "uncertain_units": 0
+      },
+      "unresolved": []
+    },
+    {
+      "id": "uncertain-distance",
+      "description": "Planar toy allocation fractions of a supplied 12-unit segment; not geodesic distances",
+      "basis": "provisional_convention",
+      "status": "resolved",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              0.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          },
+          {
+            "activity_id": "syn-a",
+            "sample_index": 1,
+            "timestamp": "2000-01-02T00:00:01Z",
+            "coordinate": [
+              1.5,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ],
+        "segments": [
+          {
+            "from_sample": 0,
+            "to_sample": 1,
+            "qualification": "uncertain",
+            "policy_version": "syn-q1"
+          }
+        ],
+        "toy_length_units": 12
+      },
+      "expected": {
+        "visited": [
+          "syn-west",
+          "syn-east"
+        ],
+        "allocated_units": {},
+        "unallocated_units": 0,
+        "uncertain_units": 12
+      },
+      "unresolved": []
+    },
+    {
+      "id": "boundary-point",
+      "description": "Exact synthetic border: country ownership not selected",
+      "basis": "provisional_convention",
+      "status": "partial",
+      "input": {
+        "boundary_version": "syn-country-v1",
+        "boundaries": {
+          "syn-west": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "syn-east": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "samples": [
+          {
+            "activity_id": "syn-a",
+            "sample_index": 0,
+            "timestamp": "2000-01-02T00:00:00Z",
+            "coordinate": [
+              1,
+              0.5
+            ],
+            "qualification": "accepted",
+            "policy_version": "syn-q1",
+            "resolution": "full"
+          }
+        ]
+      },
+      "expected": {
+        "visited": null
+      },
+      "unresolved": [
+        "Country boundary inclusion policy requires Platform decision."
+      ]
+    }
+  ]
+}

@@ -106,3 +106,11 @@ This slice deliberately does not select:
 Those choices require the feasibility work described in the
 [Roadmap](roadmap.md) and should be recorded as decision records when evidence is
 available.
+
+## Synthetic evidence boundary
+
+[Slice 2 fixtures](../fixtures/README.md) and their bounded offline audit are
+test evidence only. Their mathematical checks and generic connectivity certificates
+are not reusable production geographic products. Canonical algorithms and
+qualification stay in Platform; Explorer may consume the expected snapshots to
+test presentation without calculating competing answers.
