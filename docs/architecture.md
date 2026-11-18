@@ -2,32 +2,22 @@
 
 **Status:** Intended responsibility boundary for the accepted v0.1 design
 
-**Implementation state:** No implementation or interface contract
+**Implementation state:** No Explorer application or production delivery interface;
+Platform G3A pure calculations accepted on 17 November 2026
 
 ## Purpose
 
 Explorer is intended to be a presentation and interaction consumer of trusted
-geographic data products from Cycling Platform. The required geographic
-products are future contracts to be investigated; this document does not claim
-that those products or an Explorer-facing interface already exist. This follows
+geographic data products from Cycling Platform. G3A now implements a pure
+calculation foundation; persistent geographic products and an Explorer-facing
+production delivery interface remain outstanding. This follows
 the portfolio conventions of one accountable canonical owner, separation of
 data products from presentation, reproducible provenance and privacy by default.
 
-```text
-Source activity and GPS observations
-                 |
-                 v
-Cycling Platform: canonical identity, qualification, reference data,
-                  derived and historical geographic products
-                 |
-                 | trusted, versioned products and provenance
-                 v
-Explorer: map interaction, visualisation, search, playback and UI state
-```
-
-The arrow expresses intended responsibility and required future contracts, not
-implemented products, an implemented interface, a schema, a runtime dependency
-or a deployment commitment.
+Source activity observations feed Platform-owned identity, qualification and
+geographic calculations; trusted versioned products will feed Explorer's
+presentation. This describes responsibility, not an implemented runtime interface,
+physical schema or deployment commitment.
 
 ## Cycling Platform responsibilities
 
@@ -44,8 +34,9 @@ Canonical results include the facts and classifications that consumers must
 agree on: evidence qualification, visit evidence, historical tile membership,
 cluster and maximum-square classifications, country evidence and geographic
 distance allocations. Platform ownership is the intended boundary; availability
-of these geographic products is not claimed. Their exact future contracts remain
-to be investigated.
+of these geographic products is not claimed. G3A logical geometry/evidence
+meanings are established; production interfaces and broader classification
+products remain to be delivered.
 
 ## Explorer responsibilities
 
@@ -114,3 +105,53 @@ test evidence only. Their mathematical checks and generic connectivity certifica
 are not reusable production geographic products. Canonical algorithms and
 qualification stay in Platform; Explorer may consume the expected snapshots to
 test presentation without calculating competing answers.
+
+## Accepted G3A meanings and consumer obligations
+
+Reconciled on 18 November 2026 against Platform commit
+`05dcbbe2c5d5c433216ecaa9cf8897f0fcb308b9`; see its
+[accepted foundation](../../cycling-platform/docs/geographic_calculation_foundation.md)
+and [logical contracts](../../cycling-platform/docs/proposals/geographic_data_contracts.md).
+
+- Tile references are canonical `z/x/y` text on the zoom-14 Web Mercator grid.
+  Bounds and geographic centres are implemented. Half-open boundaries, `1e-9`
+  projected-unit snapping, +180/-180 aliasing and the excluded southern limit
+  remain provisional conventions, not empirical VeloViewer compatibility.
+- Valid coordinates, supplied accepted observation qualification and explicit
+  full-resolution eligibility are separate requirements for positive tile
+  evidence. Preserve `coordinate_status`, `qualification_status`,
+  `full_resolution_eligible` and `tile_evidence_eligible` independently. Malformed
+  rejected evidence remains both malformed and rejected. Accepted stationary
+  samples can qualify; segment interpolation/corner clipping cannot.
+- Permanent canonical `activity_key` is exact signed BIGINT identity. Consumers
+  must preserve every digit across parsing, transport, state, lookup and display;
+  never route it through a JavaScript Number (or another lossy floating-point
+  representation). The production serialisation format remains unselected.
+- One activity/tile relationship is unique; lifetime visitation counts distinct
+  canonical activities, not observations or source IDs.
+- Supplied unknown observation time stays unknown. Display known first/last
+  extrema as **known** extrema when chronology is incomplete, not globally proven
+  first/last visits. G3A breaks equal known-time ties by exact canonical key
+  (smallest for first, largest for last); this does not establish temporal meaning
+  for keys or solve historical checkpoint/square/cluster ordering.
+- Whole-activity evidence replacement or withdrawal can remove a tile's sole
+  qualifying observation population and change first/last known visits. Lifetime
+  discovery counts need not increase monotonically across corrected builds.
+  Replacement and full reconstruction from the same current evidence must agree.
+- A lifetime calculation uses one coherent qualification-policy version. G3A
+  rejects mixed populations even across different tiles. Explorer must not stitch
+  incompatible versions together or assume uninterrupted historical continuity;
+  show explicit version/completeness context and consume a coherent replacement
+  product when available. Physical publication/invalidation is not implemented.
+
+Canonical identity deployment and successful overnight deep validation are
+owner-reported in the 18 November handoff; this reconciliation accessed no
+production system. G3A consumes supplied qualification, representation identity
+and timestamps; it does not make those production evidence sources authoritative.
+Durable sample identity, GPS qualification, absolute chronology, persistence,
+incremental invalidation, interfaces and volume/runtime evidence remain Platform
+dependencies. See the [roadmap](roadmap.md) for G3B–G3E.
+
+Explorer can use authored synthetic geographic products for a later consumer
+prototype without implementing competing production algorithms, importing R
+calculation functions into a browser, or inventing a physical Platform interface.

@@ -1,6 +1,7 @@
 # VeloViewer compatibility register
 
-**Reviewed:** 17 November 2026. **Target:** VeloViewer Explorer; Squadrats secondary.
+**Reconciled against G3A:** 18 November 2026. Public-source review remains dated
+17 November 2026. **Target:** VeloViewer Explorer; Squadrats secondary.
 **Status:** Evidence register, not compatibility certification or owner acceptance.
 
 | Category | Evidence / expectation | Fixture or remaining question |
@@ -9,7 +10,7 @@
 | Documented external behaviour | The overview describes surrounded cluster tiles and three-wide connecting corridors | `cross-interior`, `one-wide-bridge`, `three-wide-corridor`; not a complete expansion/tie specification |
 | Documented external behaviour | The [8 April 2024 update](https://blog.veloviewer.com/update-to-detailed-veloviewer-explorer-tile-ticking/) describes increased coordinate precision and segment-based corner ticking with restrictions | Do not import those restrictions as Explorer qualification thresholds; external behaviour can change |
 | Independently established mathematics | [Slippy-map formulas](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames) give 16,384 columns/rows at z14, with x eastward/y southward; bounds, projected centre and all-visited square certificates are independently auditable | `tile_geometry`, `arrangements`; cells have variable ground area |
-| Empirically verified external behaviour | **None in Slice 2** | No authenticated account access or comparative output; synthetic mathematical correctness is not an empirical observation |
+| Empirically verified external behaviour | **None in Slice 2 or G3A** | No authenticated account access or comparative output; synthetic mathematical correctness is not an empirical observation |
 | Unverified external behaviour | Exact edge rounding, seam normalisation, polar-limit handling, square tie winner, complete cluster expansion/membership and historical reclassification | Fixture numeric convention and generic components must not be presented as verified VeloViewer behaviour |
 | Intentional Explorer policy difference | Accepted full-resolution sample inside required; valid segment-only and corner-only crossings cannot tick tiles | `tile_evidence/segment-only`, `corner-only`; retain this rule even if headline totals differ |
 | Accepted Explorer policy | Rejected/uncertain observations cannot establish visits; historical state uses that state's evidence and policy | Tile/country evidence and history fixtures; not an external qualification claim |
@@ -24,14 +25,43 @@
 2. Resolve whether surrounded tiles alone form the counted cluster and how growth,
    corridors, edge members, multiple largest clusters and antimeridian adjacency
    are represented. Generic connected components remain separately labelled.
-3. Agree a Platform numeric boundary policy before promoting fixture snapping,
-   seam aliases or excluded southern edge to canonical behaviour.
-4. Agree all-square tie output and historical event/timestamp ordering. Preserve
-   all tied origins and versioned backfill/qualification invalidation meanwhile.
+3. G3A implements fixture snapping, seam aliases and the excluded southern edge
+   as provisional Platform conventions. Resolve numerical/external ownership
+   before presenting them as empirically verified canonical compatibility.
+4. Agree all-square tie output and historical checkpoint/classification ordering.
+   G3A known visit extrema use exact activity-key tie ordering, but this does not
+   settle square/cluster or milestone ties. Preserve all tied square origins and
+   versioned correction context meanwhile.
 5. Resolve Ride Finder start/end windows, traverses composition and explicit
    evidence completeness; agree country boundary inclusion and allocation policy.
 
 These are bounded follow-up questions, not permission to start a later slice.
-Sources were read publicly on the review date. Public statements establish what
+Public sources were read on 17 November; this reconciliation used committed
+Platform evidence, not new external observations. Public statements establish what
 was documented; only independently recorded external outputs could establish
 empirical compatibility. See [fixture semantics and validation limits](../fixtures/README.md).
+
+## Accepted G3A implementation versus external compatibility
+
+Platform commit `05dcbbe2c5d5c433216ecaa9cf8897f0fcb308b9` formally accepts the
+calculation foundation on 17 November 2026. It passes pinned format-1 Explorer
+geometry, all nine tile-evidence cases and applicable historical visitation
+fields. This is synthetic cross-project conformance, not empirical VeloViewer
+validation; no private account or GPS route was accessed.
+
+G3A uses half-open west/north ownership with `1e-9` projected tile-unit snapping,
++180 mapped to -180, and latitude range
+`(-85.0511287798066, +85.0511287798066]`. These remain provisional even though
+implemented and owner-accepted as a foundation. Snapping slightly changes strict
+half-open ownership: a point just west/north within tolerance may be assigned to
+the east/south tile. G3A uses `<= 1e-9`; the Slice 2 audit uses `< 1e-9`.
+The pinned cases do not settle the exact tolerance threshold. Do not alter those
+fixtures here or claim complete numerical equivalence beyond tested cases.
+
+Maximum squares, maximum clusters, their historical membership/ties and empirical
+VeloViewer edge behaviour remain outside G3A. Accepted sample-only visitation,
+including stationary samples, is unchanged. Corrections can withdraw evidence;
+first/last known visits and lifetime counts may change. These logical correction
+semantics do not provide historical classification products or an incremental
+engine. Pinning/hashes, actual test scope and unresolved lifecycle evidence are
+recorded in the [Slice 3 report](slice-3-report.md).

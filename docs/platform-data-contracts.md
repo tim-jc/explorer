@@ -5,6 +5,9 @@ implemented interfaces or physical schemas
 
 **Assessment date:** 14 November 2026
 
+**Reconciled against accepted Platform G3A and owner-accepted on 18 November 2026.**
+These remain logical contracts.
+
 ## Contract principles
 
 - Cycling Platform owns canonical activity identity, qualified GPS evidence,
@@ -20,8 +23,10 @@ implemented interfaces or physical schemas
   fact and cannot establish a tile visit.
 - The contracts below describe information and access patterns, not table names,
   API shapes, storage engines or deployment choices.
-- Current Platform `activity_id` is not assumed to be the final stable canonical
-  key. Every product depends on the canonical identity decision.
+- Permanent canonical `activity_key` is the established identity; source
+  `activity_id` is not a consumer key. Exact signed-BIGINT preservation is required
+  end to end, including browser state and lookup; JavaScript Number conversion is
+  prohibited. No production serialisation format is selected.
 
 ## Shared logical envelope
 
@@ -72,11 +77,11 @@ date ranges and direct lookup. Small relative to sample evidence.
 from an inserted/backfilled activity; update when canonical identity,
 qualification or source evidence changes.
 
-**Identity dependency:** Defines the stable activity key referenced by every
-other contract. Current source IDs require migration/mapping rather than becoming
-the permanent Explorer identity by accident.
+**Identity dependency:** References the established permanent `activity_key`;
+source identity mapping is Platform-owned. Manifest publication and authoritative
+event chronology remain outstanding, rather than canonical key selection.
 
-**Outstanding decisions:** Canonical key; event-time and tie semantics; virtual
+**Outstanding decisions:** Production event-time and checkpoint tie semantics; virtual
 activity policy; what constitutes “no geographic change”; backfill visibility.
 
 ## 2. Lifetime tile summary
@@ -88,7 +93,8 @@ bounds without delivering raw routes.
 **Owner:** Cycling Platform for tile facts/classification; Explorer for styling
 and display priority.
 
-**Essential information:** Fixed grid/version; tile `(z, x, y)` reference;
+**Essential information:** Fixed grid/version; canonical `z/x/y` tile ID with
+consistent `(z, x, y)` components;
 classification; first/last recorded qualified visit time/activity reference;
 distinct activity count; uncertain-evidence indicator/count; cluster identity
 and largest-cluster flag; maximum-square outline reference; explored bounds;
@@ -118,9 +124,9 @@ uncertain evidence and auditable first/last visits.
 **Owner:** Cycling Platform.
 
 **Essential information:** Tile reference; classification at requested snapshot;
-canonical activity key; qualifying sample index/key; derived absolute observation
-time; visit ordinal or event order; evidence decision; reason/provenance
-references; policy version; source resolution/full-resolution evidence; first/
+canonical `activity_key`; durable representation-bound sample reference;
+known supplied absolute observation time or explicit unknown; visit ordinal or
+event order; evidence decision; reason/provenance references; policy version; source resolution/full-resolution evidence; first/
 last flags derived for the selected version. For unvisited tiles, return a
 positive empty/uncertain result rather than fabricate a visit record.
 
@@ -174,8 +180,10 @@ Platform products, not a request for Explorer to calculate canonical geography.
 **Owner:** Cycling Platform.
 
 **Essential information:** Canonical activity key; ordered sample key/index;
-latitude/longitude; derived observation time; observation qualification state and
-reason reference; valid outgoing/incoming segment state or explicit break;
+latitude/longitude; authoritative observation time or explicit unknown; independent
+coordinate status, observation qualification, full-resolution eligibility, derived
+tile-evidence eligibility and reason reference; valid outgoing/incoming segment
+state or explicit break;
 segment qualification/provenance; source resolution; policy version; route
 completeness state.
 
@@ -312,7 +320,7 @@ licence review; disputed-boundary and boundary-point policies.
 | --- | --- |
 | New activity appended | Manifest, lifetime tiles/history, historical checkpoints, heatmap, country/region, Ride Finder index |
 | Historical activity backfill | Same products from earliest affected event; first visits/milestones can change |
-| Activity identity remap | Every activity-referencing product and cache key |
+| Source-to-canonical mapping correction | Rebuild affected evidence/products and cache references under Platform governance; never silently mutate permanent canonical keys |
 | Observation qualification change | Tiles/history/checkpoints, routes, heatmap, countries and Ride Finder |
 | Segment qualification change | Routes, heatmap where segment geometry contributes, cross-border distance and Ride Finder intersections |
 | Tile algorithm change | Lifetime tiles and historical checkpoints; compatibility version changes |
@@ -321,7 +329,8 @@ licence review; disputed-boundary and boundary-point policies.
 
 ## Decisions required before physical design
 
-1. Canonical activity identity and migration contract.
+1. Exact canonical `activity_key` preservation is established; consumer delivery
+   and source-mapping integration remain to be designed.
 2. Versioned observation/segment qualification publication policy.
 3. VeloViewer compatibility fixtures and intentional-deviation policy.
 4. Country/region source, licence, worldview and boundary policy.
@@ -340,3 +349,43 @@ authored expected results for future contract tests. They do not implement or
 accept a physical interface. Platform adapters should explicitly agree provisional
 conventions, preserve partial/unknown results and compare independently computed
 results; Explorer tests may inject expected snapshots solely for presentation.
+
+## G3A reconciliation: established semantics, outstanding delivery
+
+The [accepted G3A foundation](../../cycling-platform/docs/geographic_calculation_foundation.md)
+and [G3A logical contracts](../../cycling-platform/docs/proposals/geographic_data_contracts.md)
+at `05dcbbe2c5d5c433216ecaa9cf8897f0fcb308b9` establish meanings, not tables or an API.
+Existing product descriptions above remain broader future proposals.
+
+| Logical concern | Established G3A meaning | Consumer requirement / remaining boundary |
+| --- | --- | --- |
+| Geometry | Zoom 14; canonical `z/x/y`; conversion, bounds, projected geographic centres | Retain grid version; numerical edge, seam and southern-limit conventions remain provisional |
+| Observation | Independent `coordinate_status` (`VALID`/`MISSING`/`MALFORMED`), supplied qualification, full-resolution eligibility and derived tile eligibility | Preserve each dimension; diagnostic outcome is not a substitute for them; reduced representations never establish visits |
+| Positive visit | Valid in-tile coordinate + accepted observation + full-resolution eligibility; stationary accepted observations qualify | No segment/corner/interpolation inference; empty evidence is not physical absence |
+| Activity/tile | Unique `(activity_key, tile_id)` relationship in a current coherent population | Repeated observations increase provenance count, not distinct activity count; policy/representation lineage remains explicit |
+| Exact identity | Permanent positive signed-BIGINT `activity_key`; G3A accepts exact integer64/integer/canonical decimal text and rejects R doubles | Preserve values above 2^53, such as 9007199254740993; never parse through JavaScript Number. R input forms do not select production transport encoding |
+| Chronology | Explicit known/unknown times and completeness; known extrema remain available with incomplete chronology | Never substitute ingestion/publication time or infer a timestamp from elapsed time without an authoritative contract |
+| Known-time ties | Smallest exact canonical key for first, largest for last | Deterministic G3A extrema only; keys carry no temporal meaning and do not settle historical milestone/classification ties |
+| Correction | Whole-activity replacement or withdrawal; aggregate equals reconstruction from the same current evidence | Tiles and counts can disappear/decrease, known chronology can change; do not append-only merge corrected versions |
+| Policy | Exactly one qualification-policy version per lifetime calculation, mixed policies rejected | Keep incompatible populations separate, including partial policy transitions; wait for a coherent recalculated product before treating it as continuous history |
+
+G3A's explanatory R data frames, comma-separated sample references and supplied
+`stream_representation_id` are not accepted production encodings. Current Silver
+sample indexes are one-based; Slice 2 fixtures are zero-based; G3A preserves the
+supplied non-negative index. Production adapters must bind original sample
+references to a durable representation identity, not renumber them or conflate a
+fixture sample index with a Silver key. Full-resolution eligibility governance
+and authoritative UTC derivation remain unresolved.
+
+There is no persistent observation/activity-tile/lifetime product, incremental
+invalidation engine or consumer publication interface in G3A. G3B evidence
+consolidation is next; G3C canonical evidence contracts, G3D lifetime coverage and
+incremental invalidation, and G3E persistence/backfill/delivery remain outstanding.
+Production GPS qualification, reference datasets and runtime/volume measurements
+remain dependencies. The work-package sequence is from the 18 November owner
+handoff; it is not inferred as committed G3B–G3E implementation.
+
+Fixture conformance is pinned by revision, format and SHA-256; see the
+[Slice 3 report](slice-3-report.md). Future amendments require coordination with
+Platform, not silent replacement of expected results. Synthetic conformance
+establishes neither empirical VeloViewer compatibility nor production availability.

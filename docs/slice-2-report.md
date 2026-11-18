@@ -1,6 +1,6 @@
 # Slice 2 completion report
 
-**Date:** 17 November 2026. **Lifecycle:** Awaiting acceptance.
+**Date:** 17 November 2026. **Lifecycle:** Accepted by the owner on 17 November 2026.
 Implementation, automated verification and self-review complete; no owner
 acceptance, commit, push, deployment or subsequent-slice work implied.
 

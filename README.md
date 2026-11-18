@@ -10,8 +10,13 @@ The agreed v0.1 product-design baseline is documented in the
 [Explorer product specification v0.1](docs/product-specification.md). The owner
 accepted the Slice 0 repository and product foundation on 14 November 2026.
 The owner accepted Slice 1, the technical feasibility investigation, on 14
-November 2026. Slice 2, Compatibility and Evidence Fixtures, is implemented and
-**Awaiting acceptance**. Explorer remains designed, with no application implementation.
+November 2026. The owner accepted Slice 2, Compatibility and Evidence Fixtures,
+on 17 November 2026. The fixture work is committed at `f93bedd`.
+
+Platform G3A is accepted and available at `05dcbbe`. The bounded Slice 3 dependency
+reconciliation was **accepted on 18 November 2026**. Slice 3 remains partially
+delivered pending G3B–G3E. The owner commissioned Slice 4, Map-rendering
+Feasibility, using authored synthetic or fixture-backed data.
 
 ## Repository documents
 
@@ -31,6 +36,8 @@ November 2026. Slice 2, Compatibility and Evidence Fixtures, is implemented and
   unverified and intentional differences.
 - [Slice 2 completion report](docs/slice-2-report.md) — baseline, verification and
   owner review notes.
+- [Slice 3 reconciliation report](docs/slice-3-report.md) — accepted G3A meanings,
+  pinned conformance, remaining production dependencies and Slice 4 readiness.
 - [Decision records](decisions/README.md) — convention for future durable
   technical decisions.
 

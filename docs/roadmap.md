@@ -1,199 +1,124 @@
 # Explorer Roadmap
 
-> Keep this roadmap current, decision-oriented and readable in two to three
-> minutes. The [product specification](product-specification.md) owns accepted
-> product behaviour; this roadmap owns delivery position and next action.
+The [product specification](product-specification.md) owns accepted behaviour;
+this roadmap owns delivery position and next action.
 
-**Last reviewed:** 2026-11-17
+**Last reconciled:** 18 November 2026
+**Operational state:** No application or production geographic delivery
+**Current bounded work:** Slice 4 — Map-rendering Feasibility Prototype
+**Reconciliation state:** Accepted 18 November 2026. Wider Slice 3 partially delivered.
 
-**Operational state:** Not applicable; no application exists
+## Current baseline and target
 
-**Current delivery workstream:** Slice 2 — Compatibility and Evidence Fixtures
+Explorer is a map with analytical capabilities, not an analytics dashboard
+containing maps. Platform owns canonical geographic answers; Explorer owns
+interactive presentation and consumer behaviour.
 
-**Workstream lifecycle state:** Awaiting acceptance
+Slices 0 and 1 are accepted. Slice 2 is committed at
+`f93beddc07a0d2b6378a596cc1b2a9ac7f4b55ca`, with 96 synthetic cases accepted
+by the owner on 17 November 2026.
 
-## Mission
+Accepted Platform G3A is present at
+`05dcbbe2c5d5c433216ecaa9cf8897f0fcb308b9`. Its pure calculation and logical
+semantics satisfy the calculation dependency for independent synthetic Explorer
+work. Canonical identity is established; deployment and successful overnight deep
+validation are owner-reported in the 18 November handoff, not verified through
+production access here. Production geography delivery remains outstanding.
 
-Explorer provides a map-first geographic cycling exploration experience under
-Past the Grid. It consumes trusted Cycling Platform geographic products and owns
-their interactive presentation, not canonical activity or geographic answers.
+The next independent development milestone is **Slice 4 — Map-rendering
+feasibility prototype**, commissioned by the owner on 18 November 2026.
+See the [Slice 3 report](slice-3-report.md), [consumer contracts](platform-data-contracts.md)
+and [compatibility register](compatibility-register.md).
 
-## Current accepted state
+## Delivery milestones — numbering preserved
 
-- Agreed product-design baseline: [Explorer product specification v0.1](product-specification.md).
-- Slice 0, Repository and product foundation: **Accepted on 14 November 2026**.
-- Slice 0 is documentation-only and has no deployment state.
-- Slice 1, Technical feasibility investigation: **Accepted on 14 November 2026**.
-- Slice 2, Compatibility and Evidence Fixtures: **Awaiting acceptance; implemented and verified on 17 November 2026**.
-- Application delivery state: **Designed; no implementation**.
-- The intended Platform/Explorer responsibility boundary is documented in
-  [Architecture](architecture.md).
-- No application, interface contract, technology selection, deployment or
-  production state is claimed.
-- Evidence: the owner reviewed the corrected Slice 0 report and authorised its
-  acceptance, initial commit and commencement of Slice 1 on 14 November 2026.
+| Slice | Outcome | Position / acceptance evidence |
+| --- | --- | --- |
+| 0. Repository and product foundation | Durable specification and architecture boundary | Accepted 14 November 2026 |
+| 1. Technical feasibility investigation | Feasibility and proposed logical contracts | Accepted 14 November 2026 |
+| 2. Compatibility and evidence fixtures | Deterministic synthetic evidence and offline audits | Accepted 17 November 2026 |
+| 3. Platform geographic foundation | Identity, qualified evidence and minimum lifetime/provenance products | Partially delivered. G3A reconciliation accepted 18 November 2026. G3B–G3E outstanding. |
+| 4. Map-rendering feasibility prototype | Compare renderers using identical synthetic workloads | Commissioned 18 November 2026 |
+| 5. Lifetime map vertical slice | Consume authoritative lifetime tiles and inspection products | Designed; blocked on production geographic delivery and private access boundary |
+| 6. Historical exploration | Navigation/playback over historical classification products | Designed; checkpoints, square/cluster semantics and invalidation outstanding |
+| 7. Coverage and countries | Coverage-first and country presentation | Designed; qualification, aggregation and reference governance outstanding |
+| 8. Ride Finder | Starts/ends/traverses with three-valued evidence | Designed; completeness, predicate and spatial evidence contracts outstanding |
 
-## Target state
+## Platform dependency position
 
-The next bounded target is Slice 2, Compatibility and Evidence Fixtures. It will
-establish deterministic, non-sensitive evidence for tile conversion, boundary
-ownership, square and cluster semantics, and three-valued Ride Finder logic. It
-does not implement the Explorer application or select a technology stack.
+The following G3B–G3E work-package sequence is supplied by the 18 November
+handoff. G3A acceptance and the G3B prerequisite boundary are confirmed in the
+committed Platform foundation/review; no later implementation is inferred.
 
-## Delivery phases and milestones
+| Work package | Position |
+| --- | --- |
+| G3A — Geographic calculation foundation | Accepted 17 November 2026; geometry, sample-only evidence, distinct-activity visitation and replacement/reconstruction semantics |
+| G3B — GPS evidence consolidation | Next Platform work package; not delivered |
+| G3C — Canonical geographic evidence contracts | Outstanding |
+| G3D — Lifetime coverage and incremental invalidation | Outstanding |
+| G3E — Persistence, controlled backfill and consumer delivery | Outstanding |
 
-| Phase / milestone | Outcome | State | Acceptance evidence |
-| --- | --- | --- | --- |
-| 0. Repository and product foundation | Durable v0.1 specification, roadmap, architecture boundary and decision convention | Accepted (14 November 2026) | Owner reviewed the corrected Slice 0 report and authorised acceptance and the initial commit |
-| 1. Technical feasibility and architecture investigation | Evidence-backed answers and recommendations in the [assessment](feasibility-assessment.md) and [proposed contracts](platform-data-contracts.md); no application implementation | Accepted (14 November 2026) | Owner accepted the assessment and proposed logical contracts as-is |
-| 2. Compatibility and evidence fixtures | Establish zoom-14/square expectations and three-valued evidence; expose unresolved cluster and boundary compatibility using synthetic fixtures | Awaiting acceptance | 96 synthetic cases and offline audit/mutation tests; owner acceptance pending; intentional VeloViewer differences documented |
-| 3. Platform geographic foundation | Platform supplies stable activity identity, versioned qualification and minimum lifetime tile/provenance products | Designed | Platform-owned contracts accepted and representative end-to-end evidence available |
-| 4. Map rendering feasibility prototype | Compare shortlisted renderers against the same synthetic desktop/mobile workload without choosing an application framework | Designed | Recorded payload, parse, frame-time, interaction and memory results support an owner technology decision |
-| 5. Lifetime map vertical slice | Private map-first lifetime tiles, classification, square outline and tile inspection using trusted Platform products | Designed | Independent viewport/inspection tests and privacy-boundary evidence; no duplicated canonical calculation |
-| 6. Historical exploration | Activity/date/milestone navigation, playback and aligned charts over Platform historical checkpoints | Designed | Historical fixture replay, random-seek and backfill-invalidation evidence |
-| 7. Coverage and countries | Coverage-first heatmap plus country/region discovery and allocation presentation | Designed | Qualified-gap, distinct-activity, boundary-version and uncertainty fixtures |
-| 8. Ride Finder | Spatial searches with starts/ends/traverses and true/false/unknown negation | Designed | Predicate truth-table, sample/segment distinction, complete-route and privacy tests |
+Remaining prerequisites for authoritative data include production GPS
+qualification, durable stream/representation/sample identity, authoritative
+absolute UTC observation chronology, coherent qualification-policy publication,
+persistent evidence/products, incremental invalidation, physical interfaces and
+production volume/runtime evidence. Sample index bases and unknown chronology
+must be respected. G3A's whole-activity replacement function is not an incremental
+engine or publication service. Reference geography, heatmaps, countries, Ride
+Finder, maximum squares/clusters and historical classification are not G3A outputs.
 
-## Active work
+## Commissioned Slice 4 scope
 
-**Current bounded item:** Slice 2 — Compatibility and Evidence Fixtures; Awaiting
-acceptance. [Fixtures and validation](../fixtures/README.md), [compatibility register](compatibility-register.md)
-and [completion report](slice-2-report.md) are available for owner review.
+- Compare **MapLibre GL JS and Leaflet Canvas** with identical deterministic,
+  authored synthetic or fixture-backed workloads. No production API or raw owner
+  routes; no competing canonical calculations. Use existing expected products
+  and clearly label unresolved square/cluster fields.
+- Define explicit lower/typical/upper synthetic scale assumptions. Unknown real
+  production volumes do not block synthetic comparison, but prevent claims of
+  validated production capacity.
+- Measure payload/parse time, initial render, pan/zoom responsiveness, frame time,
+  memory, layer toggling, tile overlays and inspection interactions with the same
+  workload and measurement method. Record environment and reproducibility.
+- Include desktop/mobile interaction and layout constraints, touch inspection,
+  accessibility and device limits. Distinguish actual device measurements from
+  desktop viewport simulation; representative mobile hardware remains to be agreed.
+- Investigate privacy, request/data leakage, attribution/licensing, provider terms
+  and detailed dark cartography suitable for short routes. Identify provider
+  considerations as evidence for a later decision, not an automatic selection.
+- Carry the **Cycling Analytics detailed dark Best Efforts cartography** dependency:
+  Analytics deferred improvements until Explorer informs the wider map provider
+  strategy. Evaluate relevance in the prototype without modifying Analytics or
+  assuming one renderer/provider must serve both products.
 
-**Position:** Slices 0 and 1 are accepted. Slice 2 implementation and automated
-verification are complete; owner review and acceptance remain pending. Canonical Platform
-identity, qualification and geographic-product dependencies remain outstanding;
-they block later canonical product slices but do not block Slice 2's synthetic,
-non-sensitive fixture work. No application implementation or technology
-selection has been authorised.
+The later prototype should produce a comparison and owner decision evidence,
+not select an application framework or quietly adopt a production map stack.
+No provider investigation, benchmark, application build or new synthetic assets
+were started during this reconciliation.
 
-**Evidence needed for acceptance:** Portable deterministic tests and documented
-fixtures cover zoom-14 conversion, numeric boundary ownership, maximum-square
-cases, explicitly qualified cluster assumptions, and true/false/unknown
-predicate semantics. Intentional differences from VeloViewer are traceable and
-no private GPS evidence is included.
+## Risks and unresolved questions
 
-## Research questions
+- G3A synthetic conformance is not empirical VeloViewer compatibility. Keep
+  VeloViewer canonical and Squadrats secondary; retain sample-only visitation.
+- Numerical half-open/snapping, antimeridian and southern-limit conventions are
+  provisional; the exact snap-threshold distinction is documented in the register.
+- Maximum-square/cluster membership, historical classifications and their ties
+  remain open; known-visit key tie ordering solves only G3A extrema determinism.
+- Preserve exact BIGINT activity identity across browser consumers without a
+  JavaScript Number conversion; production serialisation remains undecided.
+- Unknown chronology stays unknown; correction can reduce lifetime counts and
+  remove visited tiles. Products must use coherent policies and version context;
+  incompatible populations cannot be stitched into apparent continuous history.
+- Authenticated delivery, route privacy, reference licensing/worldview and
+  production capacity remain later prerequisites. A static public bundle is not
+  permission to expose private routes.
 
-These are questions, not implementation commitments.
+## Next action and deferred work
 
-1. **VeloViewer compatibility:** What tile grid, coordinate-edge behaviour,
-   maximum-square rules and cluster semantics are required for compatible
-   results, and how can they be tested against representative known cases?
-2. **GPS evidence and quality:** Which full-resolution sample and segment fields,
-   gap rules, uncertainty states and policy versions must Platform expose?
-3. **Historical computation:** How should Platform reproduce tile visits,
-   clusters and maximum squares as of an activity or time without relying on
-   present-day classification, and what milestone events should it publish?
-4. **Geographic Reference data:** Which country/region boundary sources,
-   licences, versions and boundary policies satisfy reproducibility and
-   cross-border allocation needs?
-5. **Data-product boundary:** Which Gold products and provenance fields should
-   Platform provide, and through what candidate contract can Explorer consume
-   them without duplicating canonical logic?
-6. **Browser maps and performance:** Which rendering approaches can display
-   lifetime tiles, complete selected routes, heatmaps, history and search areas
-   at representative scale on desktop and mobile?
-7. **Privacy and access:** What authenticated boundary, route-data minimisation,
-   redaction and deliberate public-output controls are required?
+Implement and verify the Slice 4 prototype for owner review. Full Slice 3
+production delivery remains dependent on Platform G3B–G3E.
 
-## Dependencies
-
-- **Cycling Platform:** Owner of canonical activity identity, qualified GPS
-  evidence, Geographic Reference data, derived Gold geographic products and
-  historical classifications. Required condition: candidate inputs, quality
-  policies and product boundaries can be inspected without production access.
-- **VeloViewer behaviour:** External compatibility target. Required condition:
-  lawful, representative expected results or documented behaviour are available
-  for comparison.
-- **Geographic Reference sources:** Required condition: suitable boundary data
-  can be evaluated for accuracy, licensing, versioning and reproducibility.
-- **Representative private activity evidence:** Owner-controlled dependency.
-  Required condition: any later use is explicitly authorised, minimised and kept
-  out of repository documentation.
-- **Cycling Analytics — detailed dark Best Efforts cartography:** Improvements
-  are deferred until Explorer informs the wider map provider strategy. Carry this
-  dependency into Slice 4 map-rendering feasibility; Slice 2 neither investigates
-  providers nor selects a shared strategy or changes Analytics.
-- **Owner decisions:** Required for accepting investigation recommendations and
-  commissioning any implementation slice.
-
-## Risks and blockers
-
-- **Compatibility ambiguity:** Undocumented edge and classification rules could
-  produce results that differ from VeloViewer. Resolve with explicit test cases
-  and documented tolerances; owner decides acceptable compatibility.
-- **Insufficient evidence quality:** Downsampled, gapped or ambiguous GPS data
-  could overstate visits and distance. Resolve through versioned qualification
-  rules and preserved uncertainty.
-- **Historical cost and correctness:** Reclassification may be expensive or may
-  accidentally use current state. Evaluate reproducible historical products and
-  representative performance before committing an approach.
-- **Reference-data change:** Boundary updates can change country and distance
-  results. Preserve source/version provenance and define recomputation policy.
-- **Boundary duplication:** Explorer-side canonical calculation could diverge
-  from Platform. Treat an explicit Platform product contract as a prerequisite.
-- **Browser performance:** Combined high-volume layers and complete routes may
-  exceed mobile rendering budgets. Benchmark representative volumes before
-  selecting a map stack.
-- **Privacy exposure:** Detailed routes can reveal sensitive locations. Define
-  authenticated access and public redaction requirements before implementation.
-
-No blocker prevented the bounded read-only investigation. Canonical application
-delivery is blocked on the Platform identity, qualification and geographic
-product decisions described above. Access to private evidence or production
-systems is not authorised by this roadmap.
-
-## Deferred work
-
-- Frontend framework, map library, database and deployment selections are
-  deferred until investigation evidence exists.
-- Application implementation is uncommitted.
-- Squadrats-specific compatibility beyond its secondary role is deferred until
-  the canonical VeloViewer target is understood.
-- Within-tile route coverage, combined `AND` predicates and deep links are agreed
-  deferred capabilities, not commitments for Slice 0 or Phase 1.
-- Subsequent slices remain Designed and unauthorised until the owner explicitly
-  commissions the relevant bounded slice. Slice 2 alone was commissioned on
-  17 November 2026; acceptance remains pending.
-
-## Proposed implementation sequence and dependency boundaries
-
-1. **Compatibility and evidence fixtures — Explorer independent.** Implement no
-   application UI. Establish tile conversion/boundary fixtures, synthetic square
-   and cluster sets, and three-valued predicate truth tables. Owner-authorised
-   VeloViewer observations are a cross-project/external dependency.
-2. **Platform geographic foundation — blocked by Platform.** Stable canonical
-   activity identity, approved observation/segment qualification, reference-data
-   governance, lifetime tiles and provenance are prerequisites for canonical
-   end-to-end results.
-3. **Renderer prototype — Explorer independent after volume assumptions.** Use
-   synthetic data to compare MapLibre GL JS and Leaflet, adding OpenLayers only
-   if geometry/editing needs justify it. This prototype informs but does not make
-   the technology choice.
-4. **Lifetime map vertical slice — cross-project.** Consume trusted Platform
-   lifetime tiles and tile-history products through an authenticated/private
-   boundary. This is the first candidate product implementation, subject to
-   separate authorisation.
-5. **Historical exploration — blocked by Platform checkpoints.** Add navigation
-   and playback only after versioned historical classification products exist.
-6. **Coverage and countries — blocked by qualification and reference decisions.**
-   Add heatmap and country presentation after aggregation and boundary contracts
-   are accepted.
-7. **Ride Finder — blocked by spatial evidence service.** Add last because it
-   needs bounded geometry queries, explicit unknown semantics, segment validity
-   and on-demand private route retrieval.
-
-The [feasibility assessment](feasibility-assessment.md) contains the concise
-Cycling Portfolio summary and separately lists actions for the Cycling Platform
-— Geospatial conversation. No sibling repository change is implied.
-
-## Next action
-
-**Owner review and acceptance of Slice 2.** Implementation and automated
-verification are complete. Leave the work uncommitted for review; do not commence
-Slice 3, renderer investigation or any subsequent slice. Review the provisional
-numeric conventions and unresolved cluster/completeness policies in the report.
+Within-tile coverage, combined AND predicates, deep links and secondary
+Squadrats-specific compatibility remain deferred as in the accepted baseline.
 
 ## Revision history
 
@@ -205,3 +130,5 @@ numeric conventions and unresolved cluster/completeness policies in the report.
 | 2026-11-14 | Slice 1 submitted for acceptance | Added feasibility assessment, proposed logical contracts and a dependency-aware implementation sequence; no implementation or technology selection |
 | 2026-11-14 | Slice 1 accepted; Slice 2 next | Owner accepted the feasibility assessment and proposed contracts as-is; fixture work is next while Platform dependencies remain outstanding |
 | 2026-11-17 | Slice 2 In progress → Awaiting acceptance | Owner-authorised synthetic fixtures and automated audit completed; cluster and predicate policy uncertainty retained; Analytics map-strategy dependency recorded |
+
+| 2026-11-18 | G3A dependency reconciliation accepted and Slice 4 commissioned | Recorded Slice 2 acceptance and retained outstanding G3B–G3E dependencies |
