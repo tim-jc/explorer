@@ -3,10 +3,10 @@
 The [product specification](product-specification.md) owns accepted behaviour;
 this roadmap owns delivery position and next action.
 
-**Last reconciled:** 18 November 2026
+**Last reconciled:** 20 November 2026
 **Operational state:** No application or production geographic delivery
-**Current bounded work:** Slice 4 — Map-rendering Feasibility Prototype
-**Reconciliation state:** Accepted 18 November 2026. Wider Slice 3 partially delivered.
+**Current bounded work:** None authorised following Slice 4 closure
+**Reconciliation state:** Slice 4 accepted 20 November 2026. Wider Slice 3 partially delivered.
 
 ## Current baseline and target
 
@@ -25,8 +25,9 @@ work. Canonical identity is established; deployment and successful overnight dee
 validation are owner-reported in the 18 November handoff, not verified through
 production access here. Production geography delivery remains outstanding.
 
-The next independent development milestone is **Slice 4 — Map-rendering
-feasibility prototype**, commissioned by the owner on 18 November 2026.
+**Slice 4 — Map-rendering feasibility and selection** was accepted by the owner
+on 20 November 2026. MapLibre GL JS is the selected renderer. No subsequent
+slice is authorised.
 See the [Slice 3 report](slice-3-report.md), [consumer contracts](platform-data-contracts.md)
 and [compatibility register](compatibility-register.md).
 
@@ -38,7 +39,7 @@ and [compatibility register](compatibility-register.md).
 | 1. Technical feasibility investigation | Feasibility and proposed logical contracts | Accepted 14 November 2026 |
 | 2. Compatibility and evidence fixtures | Deterministic synthetic evidence and offline audits | Accepted 17 November 2026 |
 | 3. Platform geographic foundation | Identity, qualified evidence and minimum lifetime/provenance products | Partially delivered. G3A reconciliation accepted 18 November 2026. G3B–G3E outstanding. |
-| 4. Map-rendering feasibility prototype | Compare renderers using identical synthetic workloads | Commissioned 18 November 2026 |
+| 4. Map-rendering feasibility prototype | Compare renderers using identical synthetic workloads | Accepted 20 November 2026. MapLibre GL JS selected after remediation, comparative benchmarks and Safari visual acceptance. |
 | 5. Lifetime map vertical slice | Consume authoritative lifetime tiles and inspection products | Designed; blocked on production geographic delivery and private access boundary |
 | 6. Historical exploration | Navigation/playback over historical classification products | Designed; checkpoints, square/cluster semantics and invalidation outstanding |
 | 7. Coverage and countries | Coverage-first and country presentation | Designed; qualification, aggregation and reference governance outstanding |
@@ -114,11 +115,28 @@ were started during this reconciliation.
 
 ## Next action and deferred work
 
-Implement and verify the Slice 4 prototype for owner review. Full Slice 3
-production delivery remains dependent on Platform G3B–G3E.
+Slice 4 is closed and the [MapLibre decision](../decisions/0001-map-renderer.md)
+is accepted. Do not commence a subsequent Explorer slice without owner
+authorisation. Full Slice 3 production delivery remains dependent on Platform
+G3B–G3E.
 
 Within-tile coverage, combined AND predicates, deep links and secondary
 Squadrats-specific compatibility remain deferred as in the accepted baseline.
+
+## Deferred interaction and cartography work
+
+- Route cartography. Evaluate width, opacity, halo and zoom-dependent styling
+  against real basemaps. The owner found that the prototype route obscured its
+  underlying road.
+- Grid visibility. Check grid contrast and legibility against real cartography.
+- Mobile tile inspection. Implement the collapsible bottom sheet envisaged for
+  the product. The experimental panel required scrolling on the owner's iPhone.
+- Exploration Through Time. Investigate incremental updates and measure them
+  against repeated whole-dataset replacement.
+- Release cache invalidation. Define how application and geographic dataset
+  releases invalidate browser caches. During final Safari verification both
+  prototypes initially remained at “Loading map…” and recovered immediately
+  after a reload from origin; caching is suspected but not established.
 
 ## Revision history
 
@@ -130,5 +148,6 @@ Squadrats-specific compatibility remain deferred as in the accepted baseline.
 | 2026-11-14 | Slice 1 submitted for acceptance | Added feasibility assessment, proposed logical contracts and a dependency-aware implementation sequence; no implementation or technology selection |
 | 2026-11-14 | Slice 1 accepted; Slice 2 next | Owner accepted the feasibility assessment and proposed contracts as-is; fixture work is next while Platform dependencies remain outstanding |
 | 2026-11-17 | Slice 2 In progress → Awaiting acceptance | Owner-authorised synthetic fixtures and automated audit completed; cluster and predicate policy uncertainty retained; Analytics map-strategy dependency recorded |
-
 | 2026-11-18 | G3A dependency reconciliation accepted and Slice 4 commissioned | Recorded Slice 2 acceptance and retained outstanding G3B–G3E dependencies |
+| 2026-11-20 | Owner selected MapLibre GL JS | Recorded benchmark and device evidence. Synthetic evidence correction awaits owner verification. |
+| 2026-11-20 | Slice 4 accepted and closed | Owner completed dependency, model, generation, smoke, full comparative and Safari visual verification after evidence remediation; MapLibre selection confirmed. |

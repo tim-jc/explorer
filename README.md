@@ -15,8 +15,8 @@ on 17 November 2026. The fixture work is committed at `f93bedd`.
 
 Platform G3A is accepted and available at `05dcbbe`. The bounded Slice 3 dependency
 reconciliation was **accepted on 18 November 2026**. Slice 3 remains partially
-delivered pending G3B–G3E. The owner commissioned Slice 4, Map-rendering
-Feasibility, using authored synthetic or fixture-backed data.
+delivered pending G3B–G3E. Slice 4, Map-rendering Feasibility and Selection,
+was **accepted on 20 November 2026**. MapLibre GL JS is the selected renderer.
 
 ## Repository documents
 
@@ -43,8 +43,16 @@ Feasibility, using authored synthetic or fixture-backed data.
 
 ## Status and scope
 
-This repository contains design documentation, synthetic fixtures and lightweight
-offline validation tooling. It contains no application code, selected technology
-stack, deployment design or implemented production geographic products.
+This repository contains design documentation, synthetic fixtures, offline
+validation tooling and the experimental Slice 4 map prototypes for MapLibre GL JS
+and Leaflet Canvas. The owner [selected MapLibre GL JS](decisions/0001-map-renderer.md)
+for subsequent development and formally accepted Slice 4 on 20 November 2026.
+The prototypes use synthetic inputs. Production geographic integration remains
+pending.
 Detailed GPS tracks are private by default. See the
 [roadmap](docs/roadmap.md) for the current investigation and delivery state.
+
+## Slice 4 experiment
+
+See the [local startup and acceptance runbook](docs/slice-4-validation.md) and
+[renderer feasibility report](docs/slice-4-report.md).

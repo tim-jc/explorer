@@ -1,2 +1,8 @@
 __pycache__/
 *.py[cod]
+node_modules/
+prototype/data/
+prototype/screenshots/
+prototype/benchmark-results.json
+prototype/benchmark-results-smoke-v2.json
+prototype/benchmark-results-post-evidence.json

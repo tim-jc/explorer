@@ -1,0 +1,23 @@
+:root {color-scheme: dark; font: 14px system-ui, sans-serif; background: #202a39; color: #eef3fa}
+* {box-sizing: border-box}
+body {margin: 0}
+#map {position: fixed; inset: 0; background: #202a39}
+nav, aside, output {position: fixed; z-index: 1000; background: #141d2a; border: 1px solid #66768b; border-radius: 8px}
+nav {top: 10px; left: 10px; right: 10px; width: max-content; max-width: calc(100% - 20px); display: flex; align-items: center; flex-wrap: wrap; gap: 7px; padding: 6px}
+nav details {position: relative}
+nav details[open] {padding: 6px; background: #141d2a; position: absolute; top: 100%; right: 0; border: 1px solid #66768b; border-radius: 8px}
+nav label {display: block}
+label, summary, button, select {cursor: pointer}
+button, select, a {padding: 5px; color: inherit}
+button, select {border: 1px solid #66768b; background: #202a39; border-radius: 4px}
+aside {right: 10px; bottom: 44px; width: min(285px, calc(100% - 20px)); max-height: 52vh; overflow: auto; padding: 10px}
+aside:has(details:not([open])) {width: max-content}
+#inspection {margin: 8px 0}
+dl {margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 8px}
+dt {color: #b4c3d2}
+dd {margin: 0; overflow-wrap: anywhere}
+output {left: 10px; bottom: 10px; padding: 5px 8px; pointer-events: none; max-width: calc(100% - 20px)}
+@media (max-width: 600px) {
+  aside {width: calc(100% - 20px); max-height: 36dvh}
+  button, select, summary {min-height: 34px}
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorer map experiment</title>
+<link rel="stylesheet" href="style.css">
+<main id="map" aria-label="Synthetic exploration map"></main>
+<nav aria-label="Map controls">
+  <a id="other" href="?renderer=maplibre">MapLibre</a>
+  <select id="tier" aria-label="Dataset size">
+    <option value="small">1,000 tiles</option><option value="medium">10,000 tiles</option>
+    <option value="large">50,000 tiles</option><option value="stress">100,000 tiles</option>
+  </select>
+  <label><input type="checkbox" id="corrected"> Corrected evidence</label>
+  <button id="home">Home</button><button id="fit">Fit</button>
+  <button id="zoom-in" aria-label="Zoom in">+</button>
+  <button id="zoom-out" aria-label="Zoom out">−</button>
+  <details>
+    <summary>Layers</summary>
+    <label><input type="checkbox" id="roads"> Synthetic roads and paths</label>
+    <label><input type="checkbox" data-layer="visited" checked> Visited tiles</label>
+    <label><input type="checkbox" data-layer="grid" checked> Grid</label>
+    <label><input type="checkbox" data-layer="outline" checked> Maximum square</label>
+    <label><input type="checkbox" data-layer="route" checked> Activity route</label>
+  </details>
+</nav>
+<aside aria-label="Tile inspection">
+  <details id="panel" open>
+    <summary>Tile inspection</summary>
+    <div id="inspection">Select a tile on the map.</div>
+    <label id="route-choice" hidden>Activity route <select id="route"></select></label>
+  </details>
+</aside>
+<output id="status" aria-live="polite">Loading map…</output>
+<script type="module" src="app.mjs"></script>
+</html>

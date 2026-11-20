@@ -1,0 +1,13 @@
+{
+  "name": "explorer-renderer-experiment",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "start": "npm run generate && python3 -m http.server 8765 --bind 127.0.0.1",
+    "test": "node --test model.test.mjs",
+    "benchmark": "node benchmark.mjs"
+  },
+  "dependencies": {"leaflet": "1.9.4", "maplibre-gl": "6.19.0"},
+  "devDependencies": {"playwright": "1.65.1"}
+}

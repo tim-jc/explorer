@@ -6,10 +6,7 @@ records accepted product behaviour; the [roadmap](../docs/roadmap.md) records
 delivery position. Decision records explain consequential technical choices
 without presenting research questions as commitments.
 
-No architecture decision records exist yet. Slice 0 intentionally selects no
-frontend framework, map library, database, interface or deployment architecture.
-The owner accepted the Slice 0 documentation on 14 November 2026. This acceptance
-does not select a technology or claim application implementation or deployment.
+- [0001 — Explorer map renderer](0001-map-renderer.md)
 
 ## When to add a record
 
