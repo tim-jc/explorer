@@ -56,3 +56,11 @@ Detailed GPS tracks are private by default. See the
 
 See the [local startup and acceptance runbook](docs/slice-4-validation.md) and
 [renderer feasibility report](docs/slice-4-report.md).
+
+## Slice 5A.1 cartographic research
+
+Slice 5A.1 was accepted and closed on 20 November 2026. Explorer selected
+MapTiler as primary and OpenFreeMap as an alternative. See the
+[research report and validation record](docs/slice-5a1-report.md), the
+[basemap strategy](decisions/0003-basemap-strategy.md) and the
+[approved application stack](decisions/0002-application-stack.md).

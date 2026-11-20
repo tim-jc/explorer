@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorer cartography research</title>
+<link rel="stylesheet" href="../prototype/node_modules/maplibre-gl/dist/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+<main id="map" aria-label="Cartographic comparison map"></main>
+<section class="panel" aria-label="Map comparison controls">
+  <div class="row">
+    <label>Provider and style <select id="style"></select></label>
+    <button id="apply" type="button">Load style</button>
+  </div>
+  <div class="row">
+    <label>Region <select id="region"></select></label>
+    <label>Scale <select id="scale"></select></label>
+    <button id="reset" type="button">Reset view</button>
+  </div>
+  <details>
+    <summary>Overlays</summary>
+    <div id="layers" class="row"></div>
+    <div class="row">
+      <label>Opacity <input id="opacity" type="range" min="0" max="1" step=".05" value=".45"></label>
+      <label>Trace width <input id="width" type="range" min="1" max="10" step="1" value="4"></label>
+      <label>Halo <select id="halo"><option value="thin">Thin dark</option><option value="dark">Wide dark</option><option value="light">Wide light</option><option value="none">None</option></select></label>
+    </div>
+  </details>
+  <details>
+    <summary>Provider access</summary>
+    <label>Browser key for selected provider <input id="key" type="password" autocomplete="off" spellcheck="false"></label>
+    <button id="save-key" type="button">Use key in this tab</button>
+  </details>
+  <a href="raster.html">Leaflet dark raster comparison</a>
+</section>
+<section class="readout" aria-label="Map status">
+  <output id="active"></output>
+  <output id="status" role="status">Starting local map…</output>
+  <div id="credit"></div>
+</section>
+<script type="module" src="main.mjs"></script>
+</html>

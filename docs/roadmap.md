@@ -5,7 +5,7 @@ this roadmap owns delivery position and next action.
 
 **Last reconciled:** 20 November 2026
 **Operational state:** No application or production geographic delivery
-**Current bounded work:** None authorised following Slice 4 closure
+**Current bounded work:** Slice 5A.1 accepted and closed. No active implementation.
 **Reconciliation state:** Slice 4 accepted 20 November 2026. Wider Slice 3 partially delivered.
 
 ## Current baseline and target
@@ -26,8 +26,9 @@ validation are owner-reported in the 18 November handoff, not verified through
 production access here. Production geography delivery remains outstanding.
 
 **Slice 4 — Map-rendering feasibility and selection** was accepted by the owner
-on 20 November 2026. MapLibre GL JS is the selected renderer. No subsequent
-slice is authorised.
+on 20 November 2026. MapLibre GL JS is the selected renderer. The owner
+approved the [application stack](../decisions/0002-application-stack.md)
+and closed Slice 5A.1 with the [accepted basemap strategy](../decisions/0003-basemap-strategy.md).
 See the [Slice 3 report](slice-3-report.md), [consumer contracts](platform-data-contracts.md)
 and [compatibility register](compatibility-register.md).
 
@@ -40,7 +41,11 @@ and [compatibility register](compatibility-register.md).
 | 2. Compatibility and evidence fixtures | Deterministic synthetic evidence and offline audits | Accepted 17 November 2026 |
 | 3. Platform geographic foundation | Identity, qualified evidence and minimum lifetime/provenance products | Partially delivered. G3A reconciliation accepted 18 November 2026. G3B–G3E outstanding. |
 | 4. Map-rendering feasibility prototype | Compare renderers using identical synthetic workloads | Accepted 20 November 2026. MapLibre GL JS selected after remediation, comparative benchmarks and Safari visual acceptance. |
-| 5. Lifetime map vertical slice | Consume authoritative lifetime tiles and inspection products | Designed; blocked on production geographic delivery and private access boundary |
+| 5A. Application foundation | Cartography research and application foundation | Subdivided below |
+| 5A.1 Cartographic research | Compare basemap providers, styles and overlays | Accepted and closed 20 November 2026. MapTiler primary, OpenFreeMap alternative. |
+| 5A.2 Application Foundation | Establish the application using the approved stack | Next proposed increment, pending authorisation |
+| 5B. Lifetime map experience | Develop lifetime interactions against synthetic geographic products | Independent of production integration |
+| 5C. Authoritative production integration | Consume authoritative lifetime tiles and inspection products | Requires production geographic delivery and private authenticated access |
 | 6. Historical exploration | Navigation/playback over historical classification products | Designed; checkpoints, square/cluster semantics and invalidation outstanding |
 | 7. Coverage and countries | Coverage-first and country presentation | Designed; qualification, aggregation and reference governance outstanding |
 | 8. Ride Finder | Starts/ends/traverses with three-valued evidence | Designed; completeness, predicate and spatial evidence contracts outstanding |
@@ -115,15 +120,20 @@ were started during this reconciliation.
 
 ## Next action and deferred work
 
-Slice 4 is closed and the [MapLibre decision](../decisions/0001-map-renderer.md)
-is accepted. Do not commence a subsequent Explorer slice without owner
-authorisation. Full Slice 3 production delivery remains dependent on Platform
-G3B–G3E.
+Slice 5A.2 — Application Foundation is the next proposed increment.
+5A.2, 5B and 5C await separate commissioning. Platform G3B–G3E and private
+authenticated access are dependencies for 5C. Synthetic development can
+proceed independently when authorised.
 
 Within-tile coverage, combined AND predicates, deep links and secondary
 Squadrats-specific compatibility remain deferred as in the accepted baseline.
 
 ## Deferred interaction and cartography work
+
+- Configure permanent MapTiler key handling, origin restrictions and usage monitoring.
+- Investigate optional terrain and independent contour controls.
+- Research lab URL without a trailing slash returns 404. Minor, non-blocking.
+- Live Stadia competitive comparison and direct live CARTO comparison were deferred.
 
 - Route cartography. Evaluate width, opacity, halo and zoom-dependent styling
   against real basemaps. The owner found that the prototype route obscured its
@@ -151,3 +161,5 @@ Squadrats-specific compatibility remain deferred as in the accepted baseline.
 | 2026-11-18 | G3A dependency reconciliation accepted and Slice 4 commissioned | Recorded Slice 2 acceptance and retained outstanding G3B–G3E dependencies |
 | 2026-11-20 | Owner selected MapLibre GL JS | Recorded benchmark and device evidence. Synthetic evidence correction awaits owner verification. |
 | 2026-11-20 | Slice 4 accepted and closed | Owner completed dependency, model, generation, smoke, full comparative and Safari visual verification after evidence remediation; MapLibre selection confirmed. |
+| 2026-11-20 | Slice 5 subdivided and 5A.1 commissioned | Application stack approved. Synthetic development can proceed independently of production integration. |
+| 2026-11-20 | Slice 5A.1 accepted and closed | Owner completed automated and device validation and accepted the basemap strategy. |

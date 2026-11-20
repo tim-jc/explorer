@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Efforts dark raster comparison</title>
+<link rel="stylesheet" href="../prototype/node_modules/leaflet/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+<main id="map" aria-label="Leaflet dark raster comparison map"></main>
+<section class="panel" aria-label="Raster comparison controls">
+  <div class="row"><label>Provider and style <select id="style"></select></label><button id="apply">Load style</button></div>
+  <div class="row"><label>Region <select id="region"></select></label><label>Scale <select id="scale"></select></label><button id="reset">Reset view</button></div>
+  <div class="row"><label>Effort opacity <input id="opacity" type="range" min="0" max="1" step=".05" value=".85"></label>
+  <label>Trace width <input id="width" type="range" min="1" max="10" step="1" value="4"></label>
+  <label>Halo <select id="halo"><option value="thin">Thin dark</option><option value="dark">Wide dark</option><option value="light">Wide light</option><option value="none">None</option></select></label></div>
+  <details><summary>Provider access</summary><label>Browser key for selected provider <input id="key" type="password" autocomplete="off" spellcheck="false"></label><button id="save-key">Use key in this tab</button></details>
+  <a href="index.html">MapLibre comparison</a>
+</section>
+<section class="readout" aria-label="Map status"><output id="active"></output><output id="status" role="status">Starting local map…</output><div id="credit"></div></section>
+<script src="../prototype/node_modules/leaflet/dist/leaflet.js"></script>
+<script type="module" src="raster.mjs"></script>
+</html>

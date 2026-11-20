@@ -7,6 +7,8 @@ delivery position. Decision records explain consequential technical choices
 without presenting research questions as commitments.
 
 - [0001 — Explorer map renderer](0001-map-renderer.md)
+- [0002 — Explorer application stack](0002-application-stack.md)
+- [0003 — Explorer basemap strategy](0003-basemap-strategy.md)
 
 ## When to add a record
 
